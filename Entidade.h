@@ -1,0 +1,24 @@
+#pragma once
+#include <sstream>
+#include "Ente.h"
+#include<SFML/Graphics.hpp>
+
+
+class Entidade : public Ente
+{
+protected:
+
+	std::ostringstream buffer;
+	sf::RectangleShape body;
+public:
+	Entidade();
+	~Entidade();
+
+	void salvarDataBuffer();
+
+	virtual void executar() = 0;
+
+	virtual void salvar() = 0;
+
+};
+

@@ -1,0 +1,41 @@
+﻿  Ente.cpp
+C:\Users\DELL Inspiron\Documents\UTFPR (Arquivos de aulas)\TECPROG\novo-jogo\novo-jogo\Ente.h(2,9): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Ente.cpp')
+  
+  Entidade.cpp
+C:\Users\DELL Inspiron\Documents\UTFPR (Arquivos de aulas)\TECPROG\novo-jogo\novo-jogo\Ente.h(2,9): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Entidade.cpp')
+  
+  Fase.cpp
+C:\Users\DELL Inspiron\Documents\UTFPR (Arquivos de aulas)\TECPROG\novo-jogo\novo-jogo\Ente.h(2,9): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Fase.cpp')
+  
+  Inimigo.cpp
+C:\Users\DELL Inspiron\Documents\UTFPR (Arquivos de aulas)\TECPROG\novo-jogo\novo-jogo\Ente.h(2,9): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Inimigo.cpp')
+  
+  Inim_Facil.cpp
+C:\Users\DELL Inspiron\Documents\UTFPR (Arquivos de aulas)\TECPROG\novo-jogo\novo-jogo\Ente.h(2,9): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Inim_Facil.cpp')
+  
+  Jogador.cpp
+C:\Users\DELL Inspiron\Documents\UTFPR (Arquivos de aulas)\TECPROG\novo-jogo\novo-jogo\Ente.h(2,9): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Jogador.cpp')
+  
+  Jogo.cpp
+C:\Users\DELL Inspiron\Documents\UTFPR (Arquivos de aulas)\TECPROG\novo-jogo\novo-jogo\Jogo.h(2,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Jogo.cpp')
+  
+  ListaEntidades.cpp
+C:\Users\DELL Inspiron\Documents\UTFPR (Arquivos de aulas)\TECPROG\novo-jogo\novo-jogo\Ente.h(2,9): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'ListaEntidades.cpp')
+  
+  main.cpp
+C:\Users\DELL Inspiron\Documents\UTFPR (Arquivos de aulas)\TECPROG\novo-jogo\novo-jogo\Jogo.h(2,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'main.cpp')
+  
+  Personagem.cpp
+C:\Users\DELL Inspiron\Documents\UTFPR (Arquivos de aulas)\TECPROG\novo-jogo\novo-jogo\Ente.h(2,9): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Personagem.cpp')
+  
+  Gerando Código...
