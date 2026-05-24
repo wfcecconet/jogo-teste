@@ -1,0 +1,26 @@
+# Arquivos compilados
+*.obj
+*.exe
+*.dll
+*.lib
+*.ilk
+*.pdb
+*.idb
+
+# Pastas de build
+Debug/
+Release/
+x64/
+x86/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.recipe
+*.log
+
+# Arquivos de log de build
+*.tlog
+*.lastbuildstate
+*.unsuccessfulbuild
