@@ -14,6 +14,12 @@ public:
 	Entidade();
 	~Entidade();
 
+	void setPosicao(float x, float y) { body.setPosition(x, y); }
+	void setTamanho(float larg, float alt) { body.setSize(sf::Vector2f(larg, alt)); }
+
+	sf::FloatRect getBounds() { return body.getGlobalBounds(); }
+
+
 	void salvarDataBuffer();
 
 	virtual void executar() = 0;

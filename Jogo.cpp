@@ -27,7 +27,14 @@ void Jogo::Executar()
         }
 
 
-		jogador1->mover();
+		//jogador1->mover();
+
+        fase1->verificaColisoes();
+
+        for (int i = 0; i < LEs->LEs.getLen(); i++) {
+            Entidade* temp = LEs->LEs.getItem(i);
+            temp->executar();
+        }
         window.clear();
         for (int i = 0; i < LEs->LEs.getLen(); i++) {
             Entidade* temp = LEs->LEs.getItem(i);
