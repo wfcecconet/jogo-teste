@@ -1,7 +1,8 @@
 #include "Personagem.h"
 
-Personagem::Personagem() : gravidade(0.007f)
+Personagem::Personagem() : gravidade(1250.f) //definindo o valor da gravidade
 {
+	noChao = false;
 	velY = 0.0;
 }
 

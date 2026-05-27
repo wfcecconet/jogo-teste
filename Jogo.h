@@ -8,6 +8,7 @@
 class Jogo{
 private:
 	sf::RenderWindow window;
+	sf::Clock clock;
 	Jogador *jogador1;
 	ListaEntidades* LEs;
 	Fase* fase1;

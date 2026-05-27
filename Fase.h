@@ -22,6 +22,7 @@ private:
 	Inim_Facil* i1;
 	Jogador* j1;
 	Lista<Plataforma>* pF;
+	Lista<Personagem>* pP;
 	sf::RenderWindow* window;
 
 	void inicializaElementos();

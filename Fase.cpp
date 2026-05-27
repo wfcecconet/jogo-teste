@@ -17,13 +17,16 @@ Fase::~Fase()
 
 void Fase::verificaColisoes()
 {
-	for (int i = 0; i < pF->getLen(); i++) {
-		Plataforma* p = pF->getItem(i);
-		if (j1->getBounds().intersects(p->getBounds()) && j1->getVelY() > 0.f) {
-			j1->setNoChao(true);
-			j1->setVelY(0.f);
-			// reposiciona o jogador em cima da plataforma
-			j1->setPosicao(j1->getBounds().left, p->getBounds().top - j1->getBounds().height);
+	for (int j = 0; j < pP->getLen(); j++) {
+		Personagem* perS = pP->getItem(j);
+		for (int i = 0; i < pF->getLen(); i++) {
+			Plataforma* plaT = pF->getItem(i);
+			if (perS->getBounds().intersects(plaT->getBounds()) && perS->getVelY() > 0.f) {
+				//perS->setNoChao(true);
+				perS->setVelY(0.f);
+				// reposiciona o jogador em cima da plataforma
+				perS->setPosicao(j1->getBounds().left, plaT->getBounds().top - perS->getBounds().height);
+			}
 		}
 	}
 }

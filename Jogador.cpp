@@ -7,7 +7,7 @@ void Jogador::colidir(Inimigo* pIn)
 
 Jogador::Jogador()
 {
-    noChao = false;
+    
 }
 
 Jogador::~Jogador()
@@ -17,7 +17,7 @@ Jogador::~Jogador()
 void Jogador::mover()
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-        body.move(sf::Vector2(-0.6f, 0.f));
+        body.move(sf::Vector2(-0.4f, 0.f));
     }
 
     /*if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
@@ -25,11 +25,11 @@ void Jogador::mover()
     }*/
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-        body.move(sf::Vector2(0.6f, 0.f));
+        body.move(sf::Vector2(0.4f, 0.f));
     }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && noChao) {
-        velY = -1.6f;
+        velY = -600.f;
         noChao = false;
     }
 
@@ -38,9 +38,9 @@ void Jogador::mover()
 
 void Jogador::executar()
 {
-    velY += gravidade;
+    velY += gravidade * deltaT; //calculando a gravidade
     
-    body.move(0.f, velY);
+    body.move(0.f, velY * deltaT);
 
     mover();
 
