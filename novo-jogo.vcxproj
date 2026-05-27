@@ -148,6 +148,7 @@
     <ClCompile Include="Ente.cpp" />
     <ClCompile Include="Entidade.cpp" />
     <ClCompile Include="Fase.cpp" />
+    <ClCompile Include="Gerenciador_Colisões.cpp" />
     <ClCompile Include="Inimigo.cpp" />
     <ClCompile Include="Inim_Facil.cpp" />
     <ClCompile Include="Jogador.cpp" />
@@ -155,6 +156,7 @@
     <ClCompile Include="ListaEntidades.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Obstaculo.cpp" />
+    <ClCompile Include="Obst_Medio.cpp" />
     <ClCompile Include="Personagem.cpp" />
     <ClCompile Include="Plataforma.cpp" />
   </ItemGroup>
@@ -163,6 +165,7 @@
     <ClInclude Include="Ente.h" />
     <ClInclude Include="Entidade.h" />
     <ClInclude Include="Fase.h" />
+    <ClInclude Include="Gerenciador_Colisões.h" />
     <ClInclude Include="Inimigo.h" />
     <ClInclude Include="Inim_Facil.h" />
     <ClInclude Include="Jogador.h" />
@@ -170,6 +173,7 @@
     <ClInclude Include="Lista.h" />
     <ClInclude Include="ListaEntidades.h" />
     <ClInclude Include="Obstaculo.h" />
+    <ClInclude Include="Obst_Medio.h" />
     <ClInclude Include="Personagem.h" />
     <ClInclude Include="Plataforma.h" />
   </ItemGroup>

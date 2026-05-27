@@ -2,7 +2,7 @@
 
 Plataforma::Plataforma()
 {
-	altura = 0;
+	danoso = false;
 }
 
 Plataforma::~Plataforma()
@@ -10,11 +10,6 @@ Plataforma::~Plataforma()
 }
 
 void Plataforma::executar()
-{
-
-}
-
-void Plataforma::salvar()
 {
 }
 
