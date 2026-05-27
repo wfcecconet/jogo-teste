@@ -7,6 +7,7 @@ Fase::Fase(Jogador* j1, sf::RenderWindow* window)
 	listaEntidades = new ListaEntidades();
 	i1 = new Inim_Facil();
 	i1->setWindow(window);
+	i1->setJogador(j1);
 	inicializaElementos();
 
 }
@@ -22,12 +23,17 @@ void Fase::verificaColisoes()
 		for (int i = 0; i < pF->getLen(); i++) {
 			Plataforma* plaT = pF->getItem(i);
 			if (perS->getBounds().intersects(plaT->getBounds()) && perS->getVelY() > 0.f) {
-				//perS->setNoChao(true);
+				perS->setNoChao(true);
 				perS->setVelY(0.f);
 				// reposiciona o jogador em cima da plataforma
-				perS->setPosicao(j1->getBounds().left, plaT->getBounds().top - perS->getBounds().height);
+				perS->setPosicao(perS->getBounds().left, plaT->getBounds().top - perS->getBounds().height);
 			}
 		}
+	}
+	if (i1->getBounds().intersects(j1->getBounds()) && i1->getTempAtaque() <= 0.f){
+		i1->danificar(j1);
+		i1->setTempAtaque(1.f);
+
 	}
 }
 
@@ -35,6 +41,11 @@ void Fase::inicializaElementos()
 {
 	listaEntidades->LEs.push(j1);
 	listaEntidades->LEs.push(i1);
+
+	pP = new Lista<Personagem>();
+
+	pP->push(j1);
+	pP->push(i1);
 
 	pF = new Lista<Plataforma>();
 

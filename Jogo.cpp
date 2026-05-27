@@ -20,6 +20,7 @@ void Jogo::Executar()
     while (window.isOpen())
     {
         float deltaT = clock.restart().asSeconds(); //começa a contagem de tempo
+        if (deltaT > 0.05f) deltaT = 0.05f; //verifica condição
         Ente::setDeltaT(deltaT); //chama o método para
 
         sf::Event event;

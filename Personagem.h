@@ -12,6 +12,9 @@ public:
 	Personagem();
 	~Personagem();
 
+	int getVidas() { return num_vidas; }
+	void setVidas(int v) { num_vidas = v; }
+
 	float getVelY() { return velY; }
 	void setVelY(float v) { velY = v; }
 	void setNoChao(bool chao) { noChao = chao; }
