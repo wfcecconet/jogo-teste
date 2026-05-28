@@ -1,6 +1,37 @@
 #include "Fase.h"
 
-Fase::Fase(Jogador* j1, sf::RenderWindow* window)
+void Fase::criarInimFaceis()
+{
+}
+
+void Fase::criarPlataformas()
+{
+}
+
+void Fase::criarCenario()
+{
+}
+
+Fase::Fase()
+{
+
+	executar();
+}
+
+Fase::~Fase()
+{
+}
+
+void Fase::executar()
+{
+	criarCenario();
+	criarPlataformas();
+	criarInimFaceis();
+}
+
+/*Código anterior de fase:
+
+(Fase::Fase(Jogador* j1, sf::RenderWindow* window)
 {
 	this->window = window;
 	this->j1 = j1;
@@ -43,4 +74,4 @@ void Fase::inicializaElementos()
 
 	listaEntidades->LEs.push(pf1);
 
-}
+}*/

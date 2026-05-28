@@ -6,13 +6,11 @@ protected:
 	int num_vidas;
 	float velY;
 	const float gravidade;
-
-
 public:
 	Personagem();
 	~Personagem();
 
-	float getVelY() { return velY; }
+	float getVelY() const { return velY; }
 	void setVelY(float v) { velY = v; }
 
 	void salvarDataBuffer();

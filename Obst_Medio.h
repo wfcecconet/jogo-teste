@@ -8,5 +8,7 @@ private:
 public:
     Obst_Medio();
     ~Obst_Medio();
+    void executar();
+	void obstaculizar(Jogador* p);
 };
 

@@ -1,0 +1,77 @@
+#include "Gerenciador_Colisoes.h"
+
+Gerenciador_Colisoes::Gerenciador_Colisoes()
+{
+	pJog1 = nullptr;
+}
+
+Gerenciador_Colisoes::~Gerenciador_Colisoes()
+{
+}
+
+void Gerenciador_Colisoes::incluirInimigo(Inimigo* pi)
+{
+	LIs.push_back(pi);
+}
+
+void Gerenciador_Colisoes::incluirObstaculo(Obstaculo* po)
+{
+	LOs.push_back(po);
+}
+
+void Gerenciador_Colisoes::incluirProjetil(Projetil* pp)
+{
+	LPs.insert(pp);
+}
+
+void Gerenciador_Colisoes::incluirJogador(Jogador* pj)
+{
+	pJog1 = pj;
+}
+
+void Gerenciador_Colisoes::executar()
+{
+	tratarColisoesJogsObstacs();
+	tratarColisoesJogsInimgs();
+	tratarColisoesJogsProjeteis();
+}
+
+const bool Gerenciador_Colisoes::verificarColisao(Entidade* pe1, Entidade* pe2)
+{
+	sf::FloatRect pe1Bounds = pe1->getBounds();
+	sf::FloatRect pe2Bounds = pe2->getBounds();
+	return (pe1Bounds.intersects(pe2Bounds));
+}
+
+void Gerenciador_Colisoes::tratarColisoesJogsObstacs()
+{
+    for (Obstaculo* obst : LOs)
+    {
+        if (verificarColisao(pJog1, obst))
+        {
+            obst->obstaculizar(pJog1);
+        }
+    }
+}
+
+void Gerenciador_Colisoes::tratarColisoesJogsInimgs()
+{
+    for (int i=0;i<LIs.size();i++)
+    {
+        if (verificarColisao(pJog1, LIs[i]))
+        {
+			pJog1->colidir(LIs[i]); //ai na funcao colidir do jogador tem que chamar a funcao danificar do inimigo, e na funcao danificar do inimigo tem que chamar a funcao receberDano do jogador, e na funcao receberDano do jogador tem que diminuir o numero de vidas do jogador
+        }
+    }
+}
+
+void Gerenciador_Colisoes::tratarColisoesJogsProjeteis()
+{
+    for (set<Projetil*>::iterator it=LPs.begin();it!=LPs.end();it++)
+    {
+        if (verificarColisao(pJog1, *it))
+        {
+            pJog1->receberDano();
+        }
+    }
+}

@@ -10,6 +10,7 @@ protected:
 
 	std::ostringstream buffer;
 	sf::RectangleShape body;
+
 public:
 	Entidade();
 	~Entidade();
