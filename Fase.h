@@ -22,20 +22,4 @@ public:
 	~Fase();
 	virtual void executar();
 
-/*public:
-	Fase(Jogador* j1, sf::RenderWindow* window);
-	~Fase();
-
-	ListaEntidades* getListaEntidades() { return listaEntidades; }
-
-	void verificaColisoes();
-
-private:
-	ListaEntidades *listaEntidades;
-	Inim_Facil* i1;
-	Jogador* j1;
-	Lista<Plataforma>* pF;
-	sf::RenderWindow* window;
-
-	void inicializaElementos();*/
 };

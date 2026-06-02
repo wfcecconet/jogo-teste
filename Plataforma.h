@@ -1,5 +1,6 @@
 #pragma once
 #include "Obstaculo.h"
+#include "Jogador.h"    
 class Plataforma :
     public Obstaculo
 {

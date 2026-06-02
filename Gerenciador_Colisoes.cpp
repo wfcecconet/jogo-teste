@@ -65,7 +65,7 @@ void Gerenciador_Colisoes::tratarColisoesJogsInimgs()
     }
 }
 
-void Gerenciador_Colisoes::tratarColisoesJogsProjeteis()
+/*void Gerenciador_Colisoes::tratarColisoesJogsProjeteis()
 {
     for (set<Projetil*>::iterator it=LPs.begin();it!=LPs.end();it++)
     {
@@ -74,4 +74,4 @@ void Gerenciador_Colisoes::tratarColisoesJogsProjeteis()
             pJog1->receberDano();
         }
     }
-}
+}*/
