@@ -3,6 +3,7 @@
 
 void Jogador::colidir(Inimigo* pIn)
 {
+	num_vidas--;
 }
 
 Jogador::Jogador()

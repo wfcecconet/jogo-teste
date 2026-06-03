@@ -1,6 +1,7 @@
 #include "Gerenciador_Grafico.h"
+#include "Ente.h"
 
-Gerenciador_Grafico::Gerenciador_Grafico(sf::RenderWindow& window) : this->window(window)
+Gerenciador_Grafico::Gerenciador_Grafico(sf::RenderWindow& window):window(window)
 {
 }
 

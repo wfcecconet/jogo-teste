@@ -5,7 +5,7 @@ Jogo::Jogo() :
 {
     jogador1 = new Jogador();
     jogador1->setWindow(&window);
-    fase1 = new Fase_Primeira(jogador1, &window);
+    fase1 = new Fase_Primeira(Jogador * j1);
     LEs = fase1->getListaEntidades();
 
     Executar();
@@ -33,16 +33,16 @@ void Jogo::Executar()
 
 		//jogador1->mover();
 
-        fase1->verificaColisoes();
+        //fase1->verificaColisoes();
 
-        for (int i = 0; i < LEs->LEs.getLen(); i++) {
-            Entidade* temp = LEs->LEs.getItem(i);
+        for (int i = 0; i < LEs->getLen(); i++) {
+            Entidade* temp = LEs->getItem(i);
             temp->executar();
         }
         
         window.clear();
-        for (int i = 0; i < LEs->LEs.getLen(); i++) {
-            Entidade* temp = LEs->LEs.getItem(i);
+        for (int i = 0; i < LEs->getLen(); i++) {
+            Entidade* temp = LEs->getItem(i);
             temp->desenhar();
 
         }
@@ -50,3 +50,4 @@ void Jogo::Executar()
     }
 
 }
+

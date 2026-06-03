@@ -65,6 +65,30 @@ void Gerenciador_Colisoes::tratarColisoesJogsInimgs()
     }
 }
 
+void Gerenciador_Colisoes::tratarColisoesInimgsObstacs()
+{
+    for (int i = 0;i < LIs.size();i++)
+    {
+        for (Obstaculo* obst : LOs)
+        {
+            if (verificarColisao(LIs[i], obst))
+            {
+                LIs[i]->setNoChao(true);
+                LIs[i]->setVelY(0.f);
+
+                sf::FloatRect p = obst->getBounds();
+                sf::FloatRect inim = LIs[i]->getBounds();
+
+                LIs[i]->setPosicao(
+                    inim.left,
+                    p.top - inim.height
+                );
+            }
+
+        }
+    }
+}
+
 /*void Gerenciador_Colisoes::tratarColisoesJogsProjeteis()
 {
     for (set<Projetil*>::iterator it=LPs.begin();it!=LPs.end();it++)

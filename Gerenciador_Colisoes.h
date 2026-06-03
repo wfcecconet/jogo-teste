@@ -19,6 +19,7 @@ private:
 	const bool verificarColisao(Entidade* pe1, Entidade* pe2);
 	void tratarColisoesJogsObstacs();
 	void tratarColisoesJogsInimgs();
+	void tratarColisoesInimgsObstacs();
 	//void tratarColisoesJogsProjeteis(); CRIAR PROJETIL
 public:
 	Gerenciador_Colisoes();

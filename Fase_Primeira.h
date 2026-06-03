@@ -8,6 +8,7 @@ class Fase_Primeira : public Fase
 {
 private:
 	const int maxInimMedios;
+	Jogador* jogador1;
 
 protected:
 
@@ -18,7 +19,7 @@ protected:
 	void criarInimigos(); //herdado
 
 public:
-	Fase_Primeira(Jogador* j1, sf::RenderWindow* window);
+	Fase_Primeira(Jogador* j1);
 	~Fase_Primeira();
 
 

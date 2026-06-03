@@ -1,6 +1,6 @@
 #pragma once
 #include "SFML/Graphics.hpp"
-class Gerenciador_Grafico; //apagar esta linha depois que criar a classe
+#include "Gerenciador_Grafico.h"
 
 
 class Ente
@@ -21,3 +21,4 @@ public:
 	void setWindow(sf::RenderWindow* window) { this->window = window; }
 };
 
+Gerenciador_Grafico* Ente::pGG = nullptr;

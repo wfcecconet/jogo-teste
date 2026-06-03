@@ -21,8 +21,8 @@ protected:
 	void criarCenario();
 
 public:
-	Fase(Jogador* j1);
+	Fase();//tirei o parametro de jogador, pois não está no UML
 	~Fase();
 	virtual void executar();
-
+	ListaEntidades* getListaEntidades(){return &lista_ents;}
 };

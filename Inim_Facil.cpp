@@ -4,6 +4,9 @@
 Inim_Facil::Inim_Facil() : raio(0.f), veloc(100.f)
 {
 	tempAtaque = 0.f;
+	body.setSize(sf::Vector2f(50.f, 50.f));
+	body.setFillColor(sf::Color::Red);
+
 }
 
 Inim_Facil::~Inim_Facil()
@@ -13,18 +16,14 @@ Inim_Facil::~Inim_Facil()
 
 void Inim_Facil::mover()
 {
-	sf::Vector2f posJog = pJog->getPosicao();
-	sf::Vector2f posInim = getPosicao();
 
-	if (posJog.x > posInim.x)
 		body.move(veloc * deltaT, 0.f);
-	else
 		body.move(-veloc * deltaT, 0.f);
 }
 
 void Inim_Facil::danificar(Jogador* p)
 {
-	p->setVidas(p->getVidas() - 1);
+	p->colidir(this);
 }
 
 void Inim_Facil::executar()

@@ -4,6 +4,8 @@ Plataforma::Plataforma()
 {
 	danoso = false;
 	altura = getBounds().height;
+	body.setFillColor(sf::Color::Green);
+	body.setSize(sf::Vector2f(300.f, 30.f));
 }
 
 Plataforma::~Plataforma()

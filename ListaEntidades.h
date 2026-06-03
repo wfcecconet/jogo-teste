@@ -9,11 +9,21 @@ private:
 public:
     void incluir(Entidade* e)
     {
-        LEs.incluir(e);
+        LEs.push(e);
     }
 
     Lista<Entidade>& getLista()
     {
         return LEs;
+    }
+
+    int getLen()
+    {
+        return LEs.getLen();
+    }
+
+    Entidade* getItem(int i)
+    {
+        return LEs.getItem(i);
     }
 };
