@@ -3,17 +3,16 @@
 
 class Inimigo;
 
-class Jogador :
-    public Personagem
+class Jogador : public Personagem
 {
 protected:
     int pontos;
     
 public:
-    void colidir(Inimigo* pIn);
-
     Jogador();
     ~Jogador();
+
+    void colidir(Inimigo* pIn);
     
     void mover();
     virtual void executar();

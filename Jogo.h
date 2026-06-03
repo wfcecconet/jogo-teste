@@ -3,7 +3,7 @@
 #include "Jogador.h"
 #include "Inimigo.h"
 #include "ListaEntidades.h"
-#include "Fase.h"
+#include "Fase_Primeira.h"
 
 class Jogo{
 private:
