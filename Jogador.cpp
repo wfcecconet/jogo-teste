@@ -7,7 +7,15 @@ void Jogador::colidir(Inimigo* pIn)
 
 Jogador::Jogador()
 {
-    
+    pontos = 0;
+
+    num_vidas = 5;
+    velY = 0.f;
+
+    body.setSize(sf::Vector2f(50.f, 80.f));
+    body.setFillColor(sf::Color::Blue);
+
+    body.setPosition(100.f, 100.f);
 }
 
 Jogador::~Jogador()
@@ -33,13 +41,13 @@ void Jogador::mover()
         noChao = false;
     }
 
-    
+
 }
 
 void Jogador::executar()
 {
     velY += gravidade * deltaT; //calculando a gravidade
-    
+
     body.move(0.f, velY * deltaT);
 
     mover();
