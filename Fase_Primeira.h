@@ -1,5 +1,12 @@
 #pragma once
+<<<<<<< HEAD
 #include "Fase.h"
+=======
+#include <SFML/Graphics.hpp>
+#include "Jogador.h"
+#include "Fase.h"
+
+>>>>>>> cecconet
 class Fase_Primeira : public Fase
 {
 private:
@@ -16,6 +23,7 @@ protected:
 public:
 	Fase_Primeira() : maxInimMedios(7) {}
 	~Fase_Primeira();
+
 
 };
 

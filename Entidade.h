@@ -7,8 +7,11 @@
 class Entidade : public Ente
 {
 protected:
+	int x;
+	int y;
 
 	std::ostringstream buffer;
+
 	sf::RectangleShape body;
 
 public:
@@ -19,7 +22,6 @@ public:
 	void setTamanho(float larg, float alt) { body.setSize(sf::Vector2f(larg, alt)); }
 
 	sf::FloatRect getBounds() { return body.getGlobalBounds(); }
-
 
 	void salvarDataBuffer();
 

@@ -4,14 +4,20 @@ class Personagem : public Entidade
 {
 protected:
 	int num_vidas;
+<<<<<<< HEAD
 	float velY;
 	const float gravidade;
+
 public:
 	Personagem();
 	~Personagem();
 
 	float getVelY() const { return velY; }
 	void setVelY(float v) { velY = v; }
+
+	int getVidas() { return num_vidas; }
+	void setVidas(int v) { num_vidas = v; }
+
 
 	void salvarDataBuffer();
 	virtual void executar() = 0;

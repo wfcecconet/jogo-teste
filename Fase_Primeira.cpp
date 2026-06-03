@@ -9,8 +9,8 @@ void Fase_Primeira::criarObstMedios()
 }
 
 void Fase_Primeira::criarObstaculo()
-{
-}
+
+
 
 void Fase_Primeira::criarInimigos()
 {
@@ -19,3 +19,5 @@ void Fase_Primeira::criarInimigos()
 Fase_Primeira::~Fase_Primeira()
 {
 }
+
+

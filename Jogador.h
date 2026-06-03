@@ -3,18 +3,17 @@
 
 class Inimigo;
 
-class Jogador :
-    public Personagem
+class Jogador : public Personagem
 {
 protected:
     int pontos;
-    bool noChao;
+    
 public:
-    void colidir(Inimigo* pIn);
-
     Jogador();
     ~Jogador();
-    void setNoChao(bool chao) { noChao = chao; }
+
+    void colidir(Inimigo* pIn);
+    
     void mover();
     virtual void executar();
     virtual void salvar();

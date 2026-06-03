@@ -1,9 +1,13 @@
 #include "Entidade.h"
 
-Entidade::Entidade():body(sf::Vector2f(64.f, 64.f))
+void Entidade::salvarDataBuffer()
 {
-	pFig = &body;
 }
+
+Entidade::Entidade()
+{
+}
+
 Entidade::~Entidade()
 {
 }

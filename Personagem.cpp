@@ -1,11 +1,13 @@
 #include "Personagem.h"
 
-Personagem::Personagem() : gravidade(0.007f)
+Personagem::Personagem()
 {
-	velY = 0.0;
 }
 
 Personagem::~Personagem()
 {
 }
 
+void Personagem::salvarDataBuffer()
+{
+}

@@ -19,6 +19,10 @@ void Jogo::Executar()
 {
     while (window.isOpen())
     {
+        float deltaT = clock.restart().asSeconds(); //começa a contagem de tempo
+        if (deltaT > 0.05f) deltaT = 0.05f; //verifica condição
+        Ente::setDeltaT(deltaT); //chama o método para
+
         sf::Event event;
         while (window.pollEvent(event))
         {
@@ -35,6 +39,7 @@ void Jogo::Executar()
             Entidade* temp = LEs->LEs.getItem(i);
             temp->executar();
         }
+        
         window.clear();
         for (int i = 0; i < LEs->LEs.getLen(); i++) {
             Entidade* temp = LEs->LEs.getItem(i);
