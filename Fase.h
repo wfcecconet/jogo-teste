@@ -7,7 +7,6 @@
 #include "Gerenciador_Colisoes.h"
 #include <SFML/Graphics.hpp>
 
-class Gerenciador_Colisoes;
 
 class Fase : public Ente
 {
@@ -22,7 +21,7 @@ protected:
 	void criarCenario();
 
 public:
-	Fase();
+	Fase(Jogador* j1);
 	~Fase();
 	virtual void executar();
 

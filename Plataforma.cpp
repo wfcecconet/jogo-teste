@@ -3,7 +3,7 @@
 Plataforma::Plataforma()
 {
 	danoso = false;
-	altura = getBounds()->height;
+	altura = getBounds().height;
 }
 
 Plataforma::~Plataforma()

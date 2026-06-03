@@ -16,6 +16,10 @@ void Obst_Dificil::obstaculizar(Jogador* p)
 {
 }
 
+void Obst_Dificil::salvar()
+{
+}
+
 void Obst_Dificil::salvarDataBuffer()
 {
 }

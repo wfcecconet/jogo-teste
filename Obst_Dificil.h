@@ -10,6 +10,7 @@ public:
 	~Obst_Dificil();
 	void executar();
 	void obstaculizar(Jogador* p);
+	void salvar();
 	void salvarDataBuffer();
 };
 

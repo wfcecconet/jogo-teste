@@ -33,7 +33,7 @@ void Gerenciador_Colisoes::executar()
 {
 	tratarColisoesJogsObstacs();
 	tratarColisoesJogsInimgs();
-	tratarColisoesJogsProjeteis();
+	//tratarColisoesJogsProjeteis();
 }
 
 const bool Gerenciador_Colisoes::verificarColisao(Entidade* pe1, Entidade* pe2)

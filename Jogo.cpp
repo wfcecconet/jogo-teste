@@ -43,7 +43,7 @@ void Jogo::Executar()
         window.clear();
         for (int i = 0; i < LEs->LEs.getLen(); i++) {
             Entidade* temp = LEs->LEs.getItem(i);
-            temp->draw();
+            temp->desenhar();
 
         }
         window.display();

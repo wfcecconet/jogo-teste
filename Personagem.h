@@ -4,13 +4,15 @@ class Personagem : public Entidade
 {
 protected:
 	int num_vidas;
-<<<<<<< HEAD
 	float velY;
 	const float gravidade;
+	bool noChao;
 
 public:
 	Personagem();
 	~Personagem();
+
+	void setNoChao(bool chao) { noChao = chao; }
 
 	float getVelY() const { return velY; }
 	void setVelY(float v) { velY = v; }

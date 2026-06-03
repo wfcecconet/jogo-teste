@@ -9,6 +9,7 @@ public:
     Obst_Medio();
     ~Obst_Medio();
     void executar();
+    void salvar();
 	void obstaculizar(Jogador* p);
 };
 

@@ -15,7 +15,7 @@ public:
 	Ente();
 	virtual ~Ente();
 	virtual void executar() = 0;
-	void draw();
+	void desenhar();
 	static void setGG(Gerenciador_Grafico* pG);
 	static void setDeltaT(float dt) { deltaT = dt; } //setter para atribuir o tempo
 	void setWindow(sf::RenderWindow* window) { this->window = window; }

@@ -5,12 +5,17 @@
 class Gerenciador_Grafico
 {
 private:
-	sf::RenderWindow obj;
+	sf::RenderWindow& obj;
 public:
-	Gerenciador_Grafico();
+	Gerenciador_Grafico(sf::RenderWindow& window);
 	~Gerenciador_Grafico();
 
 	void desenharEnte(Ente* pE);
+	
+	void limpar();
+	void mostrar();
+	const bool estaAberto() const;
+	void fechar();
 
 };
 

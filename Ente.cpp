@@ -15,7 +15,8 @@ Ente::~Ente()
 {
 }
 
-void Ente::draw()
+
+void Ente::desenhar()
 {
 	window->draw(*pFig);
 }

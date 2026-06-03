@@ -14,6 +14,10 @@ void Obst_Medio::executar()
 {
 }
 
+void Obst_Medio::salvar()
+{
+}
+
 void Obst_Medio::obstaculizar(Jogador* p)
 {
 }
