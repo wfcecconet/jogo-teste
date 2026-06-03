@@ -5,7 +5,7 @@
 #include "Inim_Facil.h"
 #include "ListaEntidades.h"
 #include "Gerenciador_Colisoes.h"
-#include <SFML/Graphics.hpp>
+#include "SFML/Graphics.hpp"
 
 
 class Fase : public Ente

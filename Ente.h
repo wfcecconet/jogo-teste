@@ -1,5 +1,5 @@
 #pragma once
-#include <SFML/Graphics.hpp>
+#include "SFML/Graphics.hpp"
 class Gerenciador_Grafico; //apagar esta linha depois que criar a classe
 
 

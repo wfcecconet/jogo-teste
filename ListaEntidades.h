@@ -3,8 +3,17 @@
 #include "Entidade.h"
 class ListaEntidades
 {
+private:
+    Lista<Entidade> LEs;
+
 public:
-	Lista<Entidade> LEs;
+    void incluir(Entidade* e)
+    {
+        LEs.incluir(e);
+    }
 
+    Lista<Entidade>& getLista()
+    {
+        return LEs;
+    }
 };
-
