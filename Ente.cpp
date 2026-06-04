@@ -18,6 +18,12 @@ Ente::~Ente()
 
 void Ente::desenhar()
 {
+	if (!window)
+		return;
+
+	if (!pFig)
+		return;
+
 	window->draw(*pFig);
 }
 

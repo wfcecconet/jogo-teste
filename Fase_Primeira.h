@@ -19,9 +19,9 @@ protected:
 	void criarInimigos(); //herdado
 
 public:
-	Fase_Primeira(Jogador* j1);
+	Fase_Primeira();
 	~Fase_Primeira();
-
-
+	void executar(); //herdado
+	
 };
 

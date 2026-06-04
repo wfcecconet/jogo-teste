@@ -55,6 +55,3 @@ void Jogador::executar()
 
 }
 
-void Jogador::salvar()
-{
-}

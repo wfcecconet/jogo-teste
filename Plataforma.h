@@ -9,6 +9,7 @@ private:
 public:
     Plataforma();
     ~Plataforma();
+    void salvar();
     void executar();
     void obstaculizar(Jogador* p);
 };

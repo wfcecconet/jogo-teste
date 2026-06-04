@@ -9,29 +9,35 @@ void Fase::criarInimFaceis()
         inim->setWindow(pGG->getWindow());
 
         inim->setPosicao(200.f + i * 180.f, 300.);
-        GC.incluirInimigo(inim);
         lista_ents.incluir(inim);
+        GC.incluirInimigo(inim);
     }
 }
 void Fase::criarPlataformas()
 {
     Plataforma* chao = new Plataforma();
 
+    chao->setWindow(pGG->getWindow());
     chao->setPosicao(0.f, 650.f);
     chao->setTamanho(1280.f, 70.f);
 
     lista_ents.incluir(chao);
+    GC.incluirObstaculo(chao);
 }
 
 void Fase::criarCenario()
 {
 }
 
+void Fase::incluirJogador(Jogador* j)
+{
+	lista_ents.incluir(j);
+	GC.incluirJogador(j);
+}
+
 Fase::Fase()
 {
     criarCenario();
-    criarPlataformas();
-    criarInimFaceis();
 }
 
 Fase::~Fase()
@@ -40,4 +46,5 @@ Fase::~Fase()
 
 void Fase::executar()
 {
+	GC.executar();
 }

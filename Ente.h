@@ -21,4 +21,3 @@ public:
 	void setWindow(sf::RenderWindow* window) { this->window = window; }
 };
 
-Gerenciador_Grafico* Ente::pGG = nullptr;

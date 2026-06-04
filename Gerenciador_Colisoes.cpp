@@ -1,4 +1,5 @@
 #include "Gerenciador_Colisoes.h"
+#include <iostream>
 
 Gerenciador_Colisoes::Gerenciador_Colisoes()
 {
@@ -31,13 +32,26 @@ void Gerenciador_Colisoes::incluirJogador(Jogador* pj)
 
 void Gerenciador_Colisoes::executar()
 {
+  
 	tratarColisoesJogsObstacs();
 	tratarColisoesJogsInimgs();
+	tratarColisoesInimgsObstacs();
 	//tratarColisoesJogsProjeteis();
 }
 
 const bool Gerenciador_Colisoes::verificarColisao(Entidade* pe1, Entidade* pe2)
 {
+    if (!pe1)
+    {
+        std::cout << "pe1 nulo\n";
+        return false;
+    }
+
+    if (!pe2)
+    {
+        std::cout << "pe2 nulo\n";
+        return false;
+    }
 	sf::FloatRect pe1Bounds = pe1->getBounds();
 	sf::FloatRect pe2Bounds = pe2->getBounds();
 	return (pe1Bounds.intersects(pe2Bounds));
@@ -73,18 +87,16 @@ void Gerenciador_Colisoes::tratarColisoesInimgsObstacs()
         {
             if (verificarColisao(LIs[i], obst))
             {
+
+                sf::FloatRect pBounds = obst->getBounds();
+                sf::FloatRect iBounds = LIs[i]->getBounds();
+
                 LIs[i]->setNoChao(true);
                 LIs[i]->setVelY(0.f);
 
-                sf::FloatRect p = obst->getBounds();
-                sf::FloatRect inim = LIs[i]->getBounds();
-
-                LIs[i]->setPosicao(
-                    inim.left,
-                    p.top - inim.height
-                );
+                LIs[i]->setPosicao(iBounds.left,pBounds.top - iBounds.height);
+                
             }
-
         }
     }
 }

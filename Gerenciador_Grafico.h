@@ -17,6 +17,10 @@ public:
 	void mostrar();
 	const bool estaAberto() const;
 	void fechar();
+	sf::RenderWindow* getWindow()
+	{
+		return &window;
+	}
 
 };
 

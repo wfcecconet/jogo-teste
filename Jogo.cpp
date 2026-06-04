@@ -1,13 +1,16 @@
 #include "Jogo.h"
 
 Jogo::Jogo() :
-    window(sf::VideoMode(1280, 720), "Jogo")
+	window(sf::VideoMode(1280, 720), "Jogo"), GG(window)
 {
+    Ente::setGG(&GG);
     jogador1 = new Jogador();
     jogador1->setWindow(&window);
-    fase1 = new Fase_Primeira(Jogador * j1);
+    fase1 = new Fase_Primeira();
+	fase1->incluirJogador(jogador1);
     LEs = fase1->getListaEntidades();
-
+    
+   
     Executar();
 }
 
@@ -21,7 +24,7 @@ void Jogo::Executar()
     {
         float deltaT = clock.restart().asSeconds(); //começa a contagem de tempo
         if (deltaT > 0.05f) deltaT = 0.05f; //verifica condição
-        Ente::setDeltaT(deltaT); //chama o método para
+        Ente::setDeltaT(deltaT); //chama o metodo para
 
         sf::Event event;
         while (window.pollEvent(event))
@@ -46,6 +49,7 @@ void Jogo::Executar()
             temp->desenhar();
 
         }
+        fase1->executar();
         window.display();
     }
 

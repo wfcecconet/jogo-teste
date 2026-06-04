@@ -10,25 +10,27 @@ void Fase_Primeira::criarObstMedios()
 
 void Fase_Primeira::criarObstaculo()
 {
+	criarPlataformas();
 }
-
-
 
 void Fase_Primeira::criarInimigos()
 {
 	criarInimFaceis();
-	criarInimMedios();
+	//criarInimMedios();
 }
 
-Fase_Primeira::Fase_Primeira(Jogador* j1) : Fase(), maxInimMedios(7)
-{	
-	jogador1 = j1;
-	lista_ents.incluir(jogador1);
-	GC.incluirJogador(jogador1);
+Fase_Primeira::Fase_Primeira() : Fase(), maxInimMedios(7)
+{
+	criarInimigos();
+	criarObstaculo();
 }
 
 Fase_Primeira::~Fase_Primeira()
 {
+
 }
 
-
+void Fase_Primeira::executar()
+{
+	Fase::executar();
+}

@@ -12,6 +12,7 @@ private:
 	Jogador *jogador1;
 	ListaEntidades* LEs;
 	Fase* fase1;
+	Gerenciador_Grafico GG;
 public:
 	Jogo();
 	~Jogo();

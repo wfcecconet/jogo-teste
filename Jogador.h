@@ -17,6 +17,6 @@ public:
 
     void mover();
     virtual void executar();
-    virtual void salvar();
+    //virtual void salvar();
 };
 

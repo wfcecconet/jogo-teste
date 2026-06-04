@@ -23,6 +23,7 @@ protected:
 public:
 	Fase();//tirei o parametro de jogador, pois não está no UML
 	~Fase();
+	void incluirJogador(Jogador* j);
 	virtual void executar();
 	ListaEntidades* getListaEntidades(){return &lista_ents;}
 };

@@ -12,15 +12,19 @@ Plataforma::~Plataforma()
 {
 }
 
+void Plataforma::salvar()
+{
+}
+
 void Plataforma::executar()
 {
 }
 
 void Plataforma::obstaculizar(Jogador* p)
 {
-	sf::FloatRect pBounds = getBounds();
-	sf::FloatRect jBounds = p->getBounds();
+	sf::FloatRect platBounds = getBounds();
+	sf::FloatRect jogBounds = p->getBounds();
 	p->setNoChao(true);
 	p->setVelY(0.f);
-	p->setPosicao(jBounds.left, pBounds.top - jBounds.height);
+	p->setPosicao(jogBounds.left, platBounds.top - jogBounds.height);
 }
