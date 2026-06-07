@@ -11,6 +11,7 @@
 class Fase : public Ente
 {
 protected:
+	Jogador* pJog;
 	ListaEntidades lista_ents;
 	Gerenciador_Colisoes GC;
 
@@ -21,7 +22,7 @@ protected:
 	void criarCenario();
 
 public:
-	Fase();//tirei o parametro de jogador, pois não está no UML
+	Fase(Jogador* j1);//tirei o parametro de jogador, pois não está no UML
 	~Fase();
 	void incluirJogador(Jogador* j);
 	virtual void executar();

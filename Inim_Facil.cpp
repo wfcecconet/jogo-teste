@@ -16,9 +16,16 @@ Inim_Facil::~Inim_Facil()
 
 void Inim_Facil::mover()
 {
+	if (pJog == nullptr) return;
 
+	sf::Vector2f posJog = pJog->getPosicao();
+	sf::Vector2f posInim = getPosicao();
+
+	if (posJog.x > posInim.x)
 		body.move(veloc * deltaT, 0.f);
+	else
 		body.move(-veloc * deltaT, 0.f);
+
 }
 
 void Inim_Facil::danificar(Jogador* p)

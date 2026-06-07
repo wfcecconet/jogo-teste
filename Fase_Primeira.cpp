@@ -19,7 +19,7 @@ void Fase_Primeira::criarInimigos()
 	//criarInimMedios();
 }
 
-Fase_Primeira::Fase_Primeira() : Fase(), maxInimMedios(7)
+Fase_Primeira::Fase_Primeira(Jogador* j1) : Fase(j1), maxInimMedios(7)
 {
 	criarInimigos();
 	criarObstaculo();

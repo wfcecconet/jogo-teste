@@ -30,6 +30,12 @@ void Gerenciador_Colisoes::incluirJogador(Jogador* pj)
 	pJog1 = pj;
 }
 
+void Gerenciador_Colisoes::setJogadorInimigos()
+{
+    for (Inimigo* inim : LIs)
+        inim->setJogador(pJog1);
+}
+
 void Gerenciador_Colisoes::executar()
 {
   
@@ -61,7 +67,7 @@ void Gerenciador_Colisoes::tratarColisoesJogsObstacs()
 {
     for (Obstaculo* obst : LOs)
     {
-        if (verificarColisao(pJog1, obst))
+        if (verificarColisao(pJog1, obst) && pJog1->getVelY() > 0.f)
         {
             obst->obstaculizar(pJog1);
         }

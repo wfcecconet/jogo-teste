@@ -28,6 +28,7 @@ public:
 	void incluirObstaculo(Obstaculo* po);
 	void incluirProjetil(Projetil* pp);
 	void incluirJogador(Jogador* pj); //função que nao está no UML, mas é necessária para o funcionamento do gerenciador de colisoes
+	void setJogadorInimigos(); //método para inimigos irem atrás de jogador
 	void executar();
 
 };

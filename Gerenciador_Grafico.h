@@ -6,9 +6,12 @@ class Ente;//forward declaration para evitar dependência circular, pois Ente te
 class Gerenciador_Grafico
 {
 private:
-	sf::RenderWindow& window; //nome mudade de obj para window, pois fazia mais sentido
+	static Gerenciador_Grafico* instancia; //padrão de desing singleton
+	sf::RenderWindow window; //nome mudade de obj para window, pois fazia mais sentido
+
+	Gerenciador_Grafico(); //construtor privado para forçar o uso do singleton
 public:
-	Gerenciador_Grafico(sf::RenderWindow& window);
+	static Gerenciador_Grafico* getInstancia();
 	~Gerenciador_Grafico();
 
 	void desenharEnte(Ente* pE);
