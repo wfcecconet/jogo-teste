@@ -30,12 +30,19 @@ void Gerenciador_Colisoes::incluirJogador(Jogador* pj)
 	pJog1 = pj;
 }
 
+void Gerenciador_Colisoes::incluirChao(Chao* pc)
+{
+    pChao = pc;
+}
+
 void Gerenciador_Colisoes::executar()
 {
   
 	tratarColisoesJogsObstacs();
 	tratarColisoesJogsInimgs();
 	tratarColisoesInimgsObstacs();
+	tratarColisoesJogsChao();
+	tratarColisoesInimgsChao();
 	//tratarColisoesJogsProjeteis();
 }
 
@@ -70,7 +77,7 @@ void Gerenciador_Colisoes::tratarColisoesJogsObstacs()
 
 void Gerenciador_Colisoes::tratarColisoesJogsInimgs()
 {
-    for (int i=0;i<LIs.size();i++)
+    for (unsigned int i=0;i<LIs.size();i++)
     {
         if (verificarColisao(pJog1, LIs[i]))
         {
@@ -81,7 +88,7 @@ void Gerenciador_Colisoes::tratarColisoesJogsInimgs()
 
 void Gerenciador_Colisoes::tratarColisoesInimgsObstacs()
 {
-    for (int i = 0;i < LIs.size();i++)
+    for (unsigned int i = 0;i < LIs.size();i++)
     {
         for (Obstaculo* obst : LOs)
         {
@@ -91,7 +98,6 @@ void Gerenciador_Colisoes::tratarColisoesInimgsObstacs()
                 sf::FloatRect pBounds = obst->getBounds();
                 sf::FloatRect iBounds = LIs[i]->getBounds();
 
-                LIs[i]->setNoChao(true);
                 LIs[i]->setVelY(0.f);
 
                 LIs[i]->setPosicao(iBounds.left,pBounds.top - iBounds.height);
@@ -100,6 +106,33 @@ void Gerenciador_Colisoes::tratarColisoesInimgsObstacs()
         }
     }
 }
+
+void Gerenciador_Colisoes::tratarColisoesJogsChao()
+{
+	if (verificarColisao(pJog1, pChao))
+	{
+		sf::FloatRect chaoBounds = pChao->getBounds();
+		sf::FloatRect jogBounds = pJog1->getBounds();
+		pJog1->setNoChao(true);
+		pJog1->setVelY(0.f);
+		pJog1->setPosicao(jogBounds.left, chaoBounds.top - jogBounds.height);
+	}
+}
+
+void Gerenciador_Colisoes::tratarColisoesInimgsChao()
+{
+    for (unsigned int i = 0;i < LIs.size();i++)
+    {
+		if (verificarColisao(LIs[i], pChao))
+		{
+			sf::FloatRect chaoBounds = pChao->getBounds();
+			sf::FloatRect iBounds = LIs[i]->getBounds();
+			LIs[i]->setVelY(0.f);
+			LIs[i]->setPosicao(iBounds.left, chaoBounds.top - iBounds.height);
+		}
+    }
+}
+
 
 /*void Gerenciador_Colisoes::tratarColisoesJogsProjeteis()
 {

@@ -5,7 +5,7 @@ class Plataforma :
     public Obstaculo
 {
 private:
-    int altura;
+   // sf::FloatRect altura; altura ainda não utilizada
 public:
     Plataforma();
     ~Plataforma();

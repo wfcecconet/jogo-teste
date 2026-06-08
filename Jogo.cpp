@@ -9,6 +9,7 @@ Jogo::Jogo() :
     fase1 = new Fase_Primeira();
 	fase1->incluirJogador(jogador1);
     LEs = fase1->getListaEntidades();
+
     
    
     Executar();
@@ -42,14 +43,14 @@ void Jogo::Executar()
             Entidade* temp = LEs->getItem(i);
             temp->executar();
         }
-        
+        fase1->executar();
         window.clear();
         for (int i = 0; i < LEs->getLen(); i++) {
             Entidade* temp = LEs->getItem(i);
             temp->desenhar();
 
         }
-        fase1->executar();
+        
         window.display();
     }
 

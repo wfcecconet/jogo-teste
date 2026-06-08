@@ -6,7 +6,7 @@ class Ente;//forward declaration para evitar dependência circular, pois Ente te
 class Gerenciador_Grafico
 {
 private:
-	sf::RenderWindow& window; //nome mudade de obj para window, pois fazia mais sentido
+	sf::RenderWindow& obj;
 public:
 	Gerenciador_Grafico(sf::RenderWindow& window);
 	~Gerenciador_Grafico();
@@ -19,7 +19,7 @@ public:
 	void fechar();
 	sf::RenderWindow* getWindow()
 	{
-		return &window;
+		return &obj;
 	}
 
 };
