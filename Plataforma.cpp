@@ -3,8 +3,8 @@
 Plataforma::Plataforma()
 {
 	danoso = false;
-	altura = getBounds().height;
-	body.setFillColor(sf::Color::Green);
+	//altura = getBounds().height; altura ainda não utilizada
+	body.setFillColor(sf::Color::White);
 	body.setSize(sf::Vector2f(300.f, 30.f));
 }
 

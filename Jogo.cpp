@@ -8,6 +8,7 @@ Jogo::Jogo()
     fase1 = new Fase_Primeira(jogador1);
 	fase1->incluirJogador(jogador1);
     LEs = fase1->getListaEntidades();
+
     
     Executar();
 }
@@ -20,8 +21,8 @@ void Jogo::Executar()
 {
     while (GG->estaAberto())
     {
-        float deltaT = clock.restart().asSeconds(); //comeÁa a contagem de tempo
-        if (deltaT > 0.05f) deltaT = 0.05f; //verifica condiÁ„o
+        float deltaT = clock.restart().asSeconds(); //come√ßa a contagem de tempo
+        if (deltaT > 0.05f) deltaT = 0.05f; //verifica condi√ß√£o
         Ente::setDeltaT(deltaT); //chama o metodo para
 
         sf::Event event;

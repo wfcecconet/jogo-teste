@@ -16,15 +16,16 @@ void Fase::criarInimFaceis()
 }
 void Fase::criarPlataformas()
 {
-    Plataforma* chao = new Plataforma();
+    Plataforma* pl1 = new Plataforma();
 
-    chao->setWindow(pGG->getWindow());
-    chao->setPosicao(0.f, 650.f);
-    chao->setTamanho(1280.f, 70.f);
+    pl1->setWindow(pGG->getWindow());
+    pl1->setPosicao(300.f, 450.f);
+    pl1->setTamanho(420.f, 70.f);
 
-    lista_ents.incluir(chao);
-    GC.incluirObstaculo(chao);
+    lista_ents.incluir(pl1);
+    GC.incluirObstaculo(pl1);
 }
+
 
 void Fase::criarCenario()
 {

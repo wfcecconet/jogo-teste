@@ -17,6 +17,7 @@ protected:
 
 	void criarObstaculo(); //herdado
 	void criarInimigos(); //herdado
+	void criarChao(); //herdado
 
 public:
 	Fase_Primeira(Jogador* j1);

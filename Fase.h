@@ -2,6 +2,7 @@
 #include "Ente.h"
 #include "Jogador.h"
 #include "Plataforma.h"
+#include "Chao.h"
 #include "Inim_Facil.h"
 #include "ListaEntidades.h"
 #include "Gerenciador_Colisoes.h"
@@ -19,6 +20,7 @@ protected:
 	void criarPlataformas();
 	virtual void criarObstaculo() = 0;
 	virtual void criarInimigos() = 0;
+	virtual void criarChao() = 0;
 	void criarCenario();
 
 public:
