@@ -8,7 +8,7 @@ class Fase_Primeira : public Fase
 {
 private:
 	const int maxInimMedios;
-	Jogador* jogador1;
+	//Jogador* jogador1;
 
 protected:
 
