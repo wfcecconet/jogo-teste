@@ -37,7 +37,7 @@ void Jogador::mover()
         body.move(sf::Vector2(0.4f, 0.f));
     }
 
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && noChao) {
         velY = -600.f;
         noChao = false;
     }

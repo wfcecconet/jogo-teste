@@ -1,7 +1,8 @@
+#include <cmath>
 #include "Inim_Facil.h"
 #include "Jogador.h"
 
-Inim_Facil::Inim_Facil() : raio(0.f), veloc(100.f)
+Inim_Facil::Inim_Facil() : raio(300.f), veloc(100.f)
 {
 	tempAtaque = 0.f;
 	body.setSize(sf::Vector2f(50.f, 50.f));
@@ -21,10 +22,16 @@ void Inim_Facil::mover()
 	sf::Vector2f posJog = pJog->getPosicao();
 	sf::Vector2f posInim = getPosicao();
 
-	if (posJog.x > posInim.x)
-		body.move(veloc * deltaT, 0.f);
-	else
-		body.move(-veloc * deltaT, 0.f);
+	float dist_x = posJog.x - posInim.x;
+	float dist_y = posJog.y - posInim.y;
+	float distancia = sqrt(dist_x * dist_x + dist_y * dist_y);
+
+	if(distancia < raio){
+		if (dist_x > 0)
+			body.move(veloc * deltaT, 0.f);
+		else
+			body.move(-veloc * deltaT, 0.f);
+	}
 
 }
 
