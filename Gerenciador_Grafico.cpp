@@ -25,20 +25,20 @@ void Gerenciador_Grafico::desenharEnte(Ente* pE)
 
 void Gerenciador_Grafico::limpar()
 {
-	obj.clear();
+	window.clear();
 }
 
 void Gerenciador_Grafico::mostrar()
 {
-	obj.display();
+	window.display();
 }
 const bool Gerenciador_Grafico::estaAberto() const
 {
-	return obj.isOpen();
+	return window.isOpen();
 }
 
 void Gerenciador_Grafico::fechar()
 {
-	obj.close();
+	window.close();
 }
 

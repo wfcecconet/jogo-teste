@@ -22,7 +22,7 @@ public:
 	void fechar();
 	sf::RenderWindow* getWindow()
 	{
-		return &obj;
+		return &window;
 	}
 
 };

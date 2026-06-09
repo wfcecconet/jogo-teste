@@ -116,7 +116,7 @@ void Gerenciador_Colisoes::tratarColisoesInimgsObstacs()
 
 void Gerenciador_Colisoes::tratarColisoesJogsChao()
 {
-	if (verificarColisao(pJog1, pChao))
+	if (verificarColisao(pJog1, pChao) && pJog1->getVelY() > 0.f) //adicionada condição para jogador pular
 	{
 		sf::FloatRect chaoBounds = pChao->getBounds();
 		sf::FloatRect jogBounds = pJog1->getBounds();
