@@ -6,7 +6,7 @@ void Fase::criarInimFaceis()
     {
         Inim_Facil* inim = new Inim_Facil();
 
-        inim->setWindow(pGG->getWindow());
+        
 
         inim->setPosicao(200.f + i * 180.f, 300.);
         lista_ents.incluir(inim);
@@ -18,7 +18,7 @@ void Fase::criarPlataformas()
 {
     Plataforma* pl1 = new Plataforma();
 
-    pl1->setWindow(pGG->getWindow());
+    
     pl1->setPosicao(300.f, 450.f);
     pl1->setTamanho(420.f, 70.f);
 
@@ -34,7 +34,7 @@ void Fase::criarCenario()
 void Fase::incluirJogador(Jogador* j)
 {
     pJog = j;
-    j->setWindow(pGG->getWindow());
+    
 	lista_ents.incluir(j);
 	GC.incluirJogador(j);
     GC.setJogadorInimigos();

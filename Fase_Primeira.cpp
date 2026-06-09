@@ -22,7 +22,6 @@ void Fase_Primeira::criarInimigos()
 void Fase_Primeira::criarChao()
 {
 	Chao* chao = new Chao();
-	chao->setWindow(pGG->getWindow());
 	chao->setCor(sf::Color::Green);
 	lista_ents.incluir(chao);
 	GC.incluirChao(chao);
