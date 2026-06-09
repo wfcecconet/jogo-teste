@@ -1,5 +1,14 @@
 #include "Fase.h"
 
+void Fase::incluirJogador(Jogador* j)
+{
+    pJog = j;
+
+    lista_ents.incluir(j);
+    GC.incluirJogador(j);
+    GC.setJogadorInimigos();
+}
+
 void Fase::criarInimFaceis()
 {
     for (int i = 0; i < 5; i++)
@@ -11,7 +20,7 @@ void Fase::criarInimFaceis()
         inim->setPosicao(200.f + i * 180.f, 300.);
         lista_ents.incluir(inim);
         GC.incluirInimigo(inim);
-        //inim->setJogador(pJog); isso aqui passou para incluirJogador
+
     }
 }
 void Fase::criarPlataformas()
@@ -31,18 +40,9 @@ void Fase::criarCenario()
 {
 }
 
-void Fase::incluirJogador(Jogador* j)
+Fase::Fase()
 {
-    pJog = j;
-    
-	lista_ents.incluir(j);
-	GC.incluirJogador(j);
-    GC.setJogadorInimigos();
-}
-
-Fase::Fase(Jogador* j1)
-{
-    pJog = j1;
+    pJog = nullptr;
     criarCenario();
 }
 

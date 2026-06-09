@@ -5,7 +5,7 @@ Jogo::Jogo()
     GG = Gerenciador_Grafico::getInstancia();
     Ente::setGG(GG);
     jogador1 = new Jogador();
-    fase1 = new Fase_Primeira(jogador1);
+    fase1 = new Fase_Primeira();
 	fase1->incluirJogador(jogador1);
     LEs = fase1->getListaEntidades();
 

@@ -24,7 +24,7 @@ protected:
 	void criarCenario();
 
 public:
-	Fase(Jogador* j1);//tirei o parametro de jogador, pois não está no UML
+	Fase();//tirei o parametro de jogador, pois não está no UML
 	~Fase();
 	void incluirJogador(Jogador* j);
 	virtual void executar();

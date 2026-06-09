@@ -16,7 +16,7 @@ public:
     void colidir(Inimigo* pIn);
 
     void mover();
-    virtual void executar();
+    void executar();
     //virtual void salvar();
 };
 
