@@ -1,8 +1,17 @@
 #include "Gerenciador_Grafico.h"
 #include "Ente.h"
 
-Gerenciador_Grafico::Gerenciador_Grafico(sf::RenderWindow& window):obj(window)
+Gerenciador_Grafico* Gerenciador_Grafico::instancia = nullptr;
+
+Gerenciador_Grafico::Gerenciador_Grafico(): window(sf::VideoMode(1280, 720), "Jogo")
 {
+}
+
+Gerenciador_Grafico* Gerenciador_Grafico::getInstancia()
+{
+	if (instancia == nullptr)
+		instancia = new Gerenciador_Grafico();
+	return instancia;
 }
 
 Gerenciador_Grafico::~Gerenciador_Grafico()

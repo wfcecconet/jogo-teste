@@ -11,6 +11,7 @@ void Fase::criarInimFaceis()
         inim->setPosicao(200.f + i * 180.f, 300.);
         lista_ents.incluir(inim);
         GC.incluirInimigo(inim);
+        //inim->setJogador(pJog); isso aqui passou para incluirJogador
     }
 }
 void Fase::criarPlataformas()
@@ -32,12 +33,16 @@ void Fase::criarCenario()
 
 void Fase::incluirJogador(Jogador* j)
 {
+    pJog = j;
+    j->setWindow(pGG->getWindow());
 	lista_ents.incluir(j);
 	GC.incluirJogador(j);
+    GC.setJogadorInimigos();
 }
 
-Fase::Fase()
+Fase::Fase(Jogador* j1)
 {
+    pJog = j1;
     criarCenario();
 }
 

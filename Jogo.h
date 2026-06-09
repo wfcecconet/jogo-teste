@@ -7,12 +7,13 @@
 
 class Jogo{
 private:
-	sf::RenderWindow window;
+	
 	sf::Clock clock;
-	Jogador *jogador1;
+	Jogador* jogador1;
+	//Jogador* jogador2;
 	ListaEntidades* LEs;
 	Fase* fase1;
-	Gerenciador_Grafico GG;
+	Gerenciador_Grafico* GG;
 public:
 	Jogo();
 	~Jogo();

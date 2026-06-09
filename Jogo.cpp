@@ -1,17 +1,15 @@
 #include "Jogo.h"
 
-Jogo::Jogo() :
-	window(sf::VideoMode(1280, 720), "Jogo"), GG(window)
+Jogo::Jogo()
 {
-    Ente::setGG(&GG);
+    GG = Gerenciador_Grafico::getInstancia();
+    Ente::setGG(GG);
     jogador1 = new Jogador();
-    jogador1->setWindow(&window);
-    fase1 = new Fase_Primeira();
+    fase1 = new Fase_Primeira(jogador1);
 	fase1->incluirJogador(jogador1);
     LEs = fase1->getListaEntidades();
 
     
-   
     Executar();
 }
 
@@ -21,17 +19,17 @@ Jogo::~Jogo()
 
 void Jogo::Executar()
 {
-    while (window.isOpen())
+    while (GG->estaAberto())
     {
-        float deltaT = clock.restart().asSeconds(); //começa a contagem de tempo
-        if (deltaT > 0.05f) deltaT = 0.05f; //verifica condição
+        float deltaT = clock.restart().asSeconds(); //comeÃ§a a contagem de tempo
+        if (deltaT > 0.05f) deltaT = 0.05f; //verifica condiÃ§Ã£o
         Ente::setDeltaT(deltaT); //chama o metodo para
 
         sf::Event event;
-        while (window.pollEvent(event))
+        while (GG->getWindow()->pollEvent(event))
         {
             if (event.type == sf::Event::Closed)
-                window.close();
+                GG->fechar();
         }
 
 
@@ -43,15 +41,17 @@ void Jogo::Executar()
             Entidade* temp = LEs->getItem(i);
             temp->executar();
         }
+        
         fase1->executar();
-        window.clear();
+
+        GG->limpar();
         for (int i = 0; i < LEs->getLen(); i++) {
             Entidade* temp = LEs->getItem(i);
             temp->desenhar();
 
         }
         
-        window.display();
+        GG->mostrar();
     }
 
 }

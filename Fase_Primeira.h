@@ -20,7 +20,7 @@ protected:
 	void criarChao(); //herdado
 
 public:
-	Fase_Primeira();
+	Fase_Primeira(Jogador* j1);
 	~Fase_Primeira();
 	void executar(); //herdado
 	
