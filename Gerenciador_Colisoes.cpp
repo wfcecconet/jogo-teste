@@ -4,6 +4,7 @@
 Gerenciador_Colisoes::Gerenciador_Colisoes()
 {
 	pJog1 = nullptr;
+	pChao = nullptr;
 }
 
 Gerenciador_Colisoes::~Gerenciador_Colisoes()

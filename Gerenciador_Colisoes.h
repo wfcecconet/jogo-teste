@@ -18,6 +18,7 @@ private:
 	Jogador* pJog1;
 	Chao* pChao;
 
+
 	const bool verificarColisao(Entidade* pe1, Entidade* pe2);
 	void tratarColisoesJogsObstacs();
 	void tratarColisoesJogsInimgs();
