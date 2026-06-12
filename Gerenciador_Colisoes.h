@@ -13,10 +13,11 @@ class Gerenciador_Colisoes
 {
 private:
 	vector<Inimigo*> LIs;
+	vector<Chao*> LCs;
 	list<Obstaculo*> LOs;
 	set<Projetil*> LPs;
 	Jogador* pJog1;
-	Chao* pChao;
+	
 
 
 	const bool verificarColisao(Entidade* pe1, Entidade* pe2);

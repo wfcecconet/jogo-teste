@@ -4,7 +4,6 @@
 Gerenciador_Colisoes::Gerenciador_Colisoes()
 {
 	pJog1 = nullptr;
-	pChao = nullptr;
 }
 
 Gerenciador_Colisoes::~Gerenciador_Colisoes()
@@ -34,7 +33,7 @@ void Gerenciador_Colisoes::incluirJogador(Jogador* pj)
 
 void Gerenciador_Colisoes::incluirChao(Chao* pc)
 {
-    pChao = pc;
+    LCs.push_back(pc);
 }
 
 void Gerenciador_Colisoes::setJogadorInimigos()
@@ -76,7 +75,7 @@ void Gerenciador_Colisoes::tratarColisoesJogsObstacs()
 {
     for (Obstaculo* obst : LOs)
     {
-        if (verificarColisao(pJog1, obst) && pJog1->getVelY() > 0.f)
+        if (verificarColisao(pJog1, obst))
         {
             obst->obstaculizar(pJog1);
         }
@@ -117,27 +116,35 @@ void Gerenciador_Colisoes::tratarColisoesInimgsObstacs()
 
 void Gerenciador_Colisoes::tratarColisoesJogsChao()
 {
-	if (verificarColisao(pJog1, pChao) && pJog1->getVelY() > 0.f) //adicionada condição para jogador pular
-	{
-		sf::FloatRect chaoBounds = pChao->getBounds();
-		sf::FloatRect jogBounds = pJog1->getBounds();
-		pJog1->setNoChao(true);
-		pJog1->setVelY(0.f);
-		pJog1->setPosicao(jogBounds.left, chaoBounds.top - jogBounds.height);
-	}
+    for (unsigned int i = 0;i < LCs.size();i++)
+    {
+        if (verificarColisao(pJog1, LCs[i]) && pJog1->getVelY() > 0.f) //adicionada condição para jogador pular
+        {
+            sf::FloatRect chaoBounds = LCs[i]->getBounds();
+            sf::FloatRect jogBounds = pJog1->getBounds();
+            pJog1->setNoChao(true);
+            pJog1->setVelY(0.f);
+            pJog1->setPosicao(jogBounds.left, chaoBounds.top - jogBounds.height);
+        }
+    }
+
 }
 
 void Gerenciador_Colisoes::tratarColisoesInimgsChao()
 {
     for (unsigned int i = 0;i < LIs.size();i++)
     {
-		if (verificarColisao(LIs[i], pChao))
-		{
-			sf::FloatRect chaoBounds = pChao->getBounds();
-			sf::FloatRect iBounds = LIs[i]->getBounds();
-			LIs[i]->setVelY(0.f);
-			LIs[i]->setPosicao(iBounds.left, chaoBounds.top - iBounds.height);
-		}
+        for (unsigned int j = 0;j < LCs.size();j++)
+        {
+            if (verificarColisao(LIs[i], LCs[j]))
+            {
+                sf::FloatRect chaoBounds = LCs[j]->getBounds();
+                sf::FloatRect iBounds = LIs[i]->getBounds();
+                LIs[i]->setVelY(0.f);
+                LIs[i]->setPosicao(iBounds.left, chaoBounds.top - iBounds.height);
+            }
+        }
+
     }
 }
 

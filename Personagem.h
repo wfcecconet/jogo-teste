@@ -7,6 +7,7 @@ protected:
 	float velY;
 	const float gravidade;
 	bool noChao;
+	float altura;
 
 public:
 	Personagem();

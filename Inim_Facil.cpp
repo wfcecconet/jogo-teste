@@ -5,7 +5,7 @@
 Inim_Facil::Inim_Facil() : raio(300.f), veloc(100.f)
 {
 	tempAtaque = 0.f;
-	body.setSize(sf::Vector2f(50.f, 50.f));
+	body.setSize(sf::Vector2f(25.f, 25.f));
 	body.setFillColor(sf::Color::Red);
 
 }

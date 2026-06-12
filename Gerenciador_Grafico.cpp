@@ -5,9 +5,6 @@ Gerenciador_Grafico* Gerenciador_Grafico::instancia = nullptr;
 
 Gerenciador_Grafico::Gerenciador_Grafico() : window(sf::VideoMode(1280, 720), "Jogo")
 {
-	view.setSize(1280.f, 720.f);
-	view.setCenter(640.f, 360.f);
-	window.setView(view);
 }
 
 Gerenciador_Grafico* Gerenciador_Grafico::getInstancia()
@@ -26,11 +23,7 @@ void Gerenciador_Grafico::desenharEnte(Ente* pE)
 	pE->desenhar();
 }
 
-void Gerenciador_Grafico::moverView(sf::Vector2f pos)
-{
-	view.setCenter(pos);
-	window.setView(view);
-}
+
 
 void Gerenciador_Grafico::limpar()
 {

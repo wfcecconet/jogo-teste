@@ -16,6 +16,5 @@ void Chao::setCor(sf::Color c)
 
 void Chao::executar()
 {
-	setPosicao(0.f, 650.f);
-	setTamanho(800.f, 500.f);
+	altura = 50.f;
 }

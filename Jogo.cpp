@@ -43,7 +43,6 @@ void Jogo::Executar()
         }
         
         fase1->executar();
-		GG->moverView(jogador1->getPosicao());
 
         GG->limpar();
         for (int i = 0; i < LEs->getLen(); i++) {

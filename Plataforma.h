@@ -5,12 +5,17 @@ class Plataforma :
     public Obstaculo
 {
 private:
-   // sf::FloatRect altura; altura ainda não utilizada
+    float altura;
+    float largura;
 public:
     Plataforma();
     ~Plataforma();
     void salvar();
     void executar();
     void obstaculizar(Jogador* p);
+    float velocidade; 
+    int indoCima;
+	float getAltura() const { return altura; }
+	float getLargura() const { return largura; }
 };
 

@@ -13,10 +13,10 @@ Jogador::Jogador()
     num_vidas = 5;
     velY = 0.f;
 
-    body.setSize(sf::Vector2f(50.f, 80.f));
+    body.setSize(sf::Vector2f(25.f, 40.f));
     body.setFillColor(sf::Color::Blue);
 
-    body.setPosition(100.f, 100.f);
+    body.setPosition(0.f, 670.f);
 }
 
 Jogador::~Jogador()
@@ -26,7 +26,7 @@ Jogador::~Jogador()
 void Jogador::mover()
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-        body.move(sf::Vector2(-0.4f, 0.f));
+        body.move(sf::Vector2(-0.2f, 0.f));
     }
 
     /*if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
@@ -34,11 +34,11 @@ void Jogador::mover()
     }*/
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-        body.move(sf::Vector2(0.4f, 0.f));
+        body.move(sf::Vector2(0.2f, 0.f));
     }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && noChao) {
-        velY = -600.f;
+        velY = -450.f;
         noChao = false;
     }
 
