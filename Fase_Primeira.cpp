@@ -1,23 +1,36 @@
 #include "Fase_Primeira.h"
 
+#include<cstdlib>
+#include <ctime>
+
 void Fase_Primeira::criarInimMedios()
 {
 }
 
 void Fase_Primeira::criarObstMedios()
 {
+	srand(time(0));
+	int numObst = (rand() % 3) + 3;
+
 	Obst_Medio* obs1 = new Obst_Medio();
 
-	obs1->setPosicao(320.f, 550.f);
+	obs1->setPosicao(720.f, 500.f);
 
 	lista_ents.incluir(obs1);
 	GC.incluirObstaculo(obs1);
+
+	Obst_Medio* obs2 = new Obst_Medio();
+
+	obs2->setPosicao(780.f, 370.f);
+
+	lista_ents.incluir(obs2);
+	GC.incluirObstaculo(obs2);
 }
 
 void Fase_Primeira::criarObstaculo()
 {
 	criarPlataformas();
-	//criarObstMedios();
+	criarObstMedios();
 }
 
 void Fase_Primeira::criarInimigos()
@@ -70,7 +83,7 @@ void Fase_Primeira::criarChao()
 Fase_Primeira::Fase_Primeira() : Fase(), maxInimMedios(7)
 {
 	criarChao();
-	criarInimigos();
+	//criarInimigos();
 	criarObstaculo();
 }
 

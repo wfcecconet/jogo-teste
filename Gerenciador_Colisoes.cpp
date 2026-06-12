@@ -118,13 +118,9 @@ void Gerenciador_Colisoes::tratarColisoesJogsChao()
 {
     for (unsigned int i = 0;i < LCs.size();i++)
     {
-        if (verificarColisao(pJog1, LCs[i]) && pJog1->getVelY() > 0.f) //adicionada condição para jogador pular
+        if (verificarColisao(pJog1, LCs[i]))
         {
-            sf::FloatRect chaoBounds = LCs[i]->getBounds();
-            sf::FloatRect jogBounds = pJog1->getBounds();
-            pJog1->setNoChao(true);
-            pJog1->setVelY(0.f);
-            pJog1->setPosicao(jogBounds.left, chaoBounds.top - jogBounds.height);
+            LCs[i]->colisaoChao(pJog1);
         }
     }
 
@@ -138,10 +134,7 @@ void Gerenciador_Colisoes::tratarColisoesInimgsChao()
         {
             if (verificarColisao(LIs[i], LCs[j]))
             {
-                sf::FloatRect chaoBounds = LCs[j]->getBounds();
-                sf::FloatRect iBounds = LIs[i]->getBounds();
-                LIs[i]->setVelY(0.f);
-                LIs[i]->setPosicao(iBounds.left, chaoBounds.top - iBounds.height);
+                LCs[j]->colisaoChao(LIs[i]);
             }
         }
 

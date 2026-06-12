@@ -1,5 +1,7 @@
 #pragma once
 #include "Entidade.h"
+#include "Personagem.h"
+
 class Chao :
     public Entidade
 {
@@ -12,5 +14,6 @@ public:
 	void setCor(sf::Color c);
 	void executar();
 	float getAltura() const { return altura; }
+	void colisaoChao(Personagem* p);
 };
 

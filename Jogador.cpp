@@ -11,7 +11,7 @@ Jogador::Jogador()
     body.setSize(sf::Vector2f(25.f, 40.f));
     body.setFillColor(sf::Color::Blue);
 
-    body.setPosition(0.f, 670.f);
+    body.setPosition(0.f, 570.f);
 }
 
 Jogador::~Jogador()

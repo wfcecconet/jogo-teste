@@ -5,7 +5,7 @@
 Obst_Medio::Obst_Medio()
 {
     altura = 25.f;
-    largura = 200.f;
+    largura = 80.f;
     tempoTroca = 0.f;
     espinhosAtivos = false;
     body.setSize(sf::Vector2f(largura, altura));
@@ -54,36 +54,32 @@ void Obst_Medio::obstaculizar(Jogador* p)
 	float dx = centroJogX - centroObstX;
 	float dy = centroJogY - centroObstY;
 
-	if (std::abs(dy) < std::abs(dx) && p->getVelY() < 0) //colisão veio dos lados
+	//sobreposição
+	float overlapX = (jogBounds.width / 2.f + obstBounds.width / 2.f) - std::abs(dx);
+	float overlapY = (jogBounds.height / 2.f + obstBounds.height / 2.f) - std::abs(dy);
+
+	if (overlapX < overlapY) //colisão veio dos lados
 	{
 		if (dx < 0) //jogador a esquerda da plataforma
 			p->setPosicao(obstBounds.left - jogBounds.width, jogBounds.top);
 
 		else //jogador a direita da plataforma
 			p->setPosicao(obstBounds.left + obstBounds.width, jogBounds.top);
+
 	}
 
-	else if (std::abs(dy) > std::abs(dx)) //colisão veio de cima ou de baixo
+	else
 	{
-		if (dy < 0) //jogador acima da plataforma
+		if (dy < 0 && p->getVelY() > 0) //jogador acima da plataforma
 		{
 			p->setNoChao(true);
-			p->setVelY(0.f);
 			p->setPosicao(jogBounds.left, obstBounds.top - jogBounds.height);
+			p->setVelY(0.f);
 		}
-		else // jogador abaixo da plataforma
+		else if (dy > 0 && p->getVelY() < 0) // jogador abaixo da plataforma
 		{
 			p->setVelY(0.f);
 			p->setPosicao(jogBounds.left, obstBounds.top + obstBounds.height);
-		}
-	}
-	else //jogador esta na borda da  plataforma, entao vamos considerar que ele esta colidindo de cima, e se ele estiver caindo, ele vai ficar em cima da plataforma
-	{
-		if (p->getVelY() > 0)
-		{
-			p->setNoChao(true);
-			p->setVelY(0.f);
-			p->setPosicao(jogBounds.left, obstBounds.top - jogBounds.height);
 		}
 	}
 

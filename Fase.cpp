@@ -7,7 +7,6 @@ using namespace std;
 void Fase::incluirJogador(Jogador* j)
 {
     pJog = j;
-
     lista_ents.incluir(j);
     GC.incluirJogador(j);
     GC.setJogadorInimigos();
@@ -32,18 +31,20 @@ void Fase::criarPlataformas()
     srand(time(0));
 	int numPlat=(rand() % 3) + 3;
 
+	numPlat = 3; //definir o número de plataformas para teste, depois retirar essa linha
+
     if (numPlat == 3)
     {
         Plataforma* pl1 = new Plataforma();
 
-        pl1->setPosicao(720.f, 550.f);
+        pl1->setPosicao(720.f, 600.f);
 
         lista_ents.incluir(pl1);
         GC.incluirObstaculo(pl1);
 
         Plataforma* pl2 = new Plataforma();
 
-        pl2->setPosicao(100.f, 200.f);
+        pl2->setPosicao(880.f, 550.f);
 
         lista_ents.incluir(pl2);
         GC.incluirObstaculo(pl2);
