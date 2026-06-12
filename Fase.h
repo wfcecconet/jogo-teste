@@ -2,6 +2,7 @@
 #include "Ente.h"
 #include "Jogador.h"
 #include "Plataforma.h"
+#include "Obst_Medio.h"
 #include "Chao.h"
 #include "Inim_Facil.h"
 #include "ListaEntidades.h"

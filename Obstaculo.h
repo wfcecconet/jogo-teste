@@ -1,5 +1,6 @@
 #pragma once
 #include "Entidade.h"
+#include "Jogador.h"    
 
 class Jogador;
 

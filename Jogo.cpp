@@ -35,8 +35,6 @@ void Jogo::Executar()
 
 		//jogador1->mover();
 
-        //fase1->verificaColisoes();
-
         for (int i = 0; i < LEs->getLen(); i++) {
             Entidade* temp = LEs->getItem(i);
             temp->executar();

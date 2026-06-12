@@ -5,11 +5,10 @@
 Plataforma::Plataforma()
 {
 	danoso = false;
-	velocidade = 100.f;
-	altura = 0.f;
-	largura = 0.f;
-
-	executar();
+	altura = 25.f;
+	largura = 150.f;
+	body.setSize(sf::Vector2f(largura, altura));
+	body.setFillColor(sf::Color::White);
 }
 
 Plataforma::~Plataforma()
@@ -22,12 +21,7 @@ void Plataforma::salvar()
 
 void Plataforma::executar()
 {
-	
-	altura = 25.f;
-	largura = 150.f;
 
-	body.setSize(sf::Vector2f(largura, altura));
-	body.setFillColor(sf::Color::White);
 }
 
 void Plataforma::obstaculizar(Jogador* p)
@@ -47,7 +41,18 @@ void Plataforma::obstaculizar(Jogador* p)
 	float dx = centroJogX - centroPlatX;
 	float dy = centroJogY - centroPlatY;
 
-	if (std::abs(dy) > std::abs(dx)) //módulo da distância entre os centros verticais é maior do que a dos horizontais, significa que a colisão veio de cima ou de baixo
+
+
+	if (std::abs(dy) <std::abs(dx) && p->getVelY() < 0) //colisão veio dos lados
+	{
+		if (dx < 0) //jogador a esquerda da plataforma
+			p->setPosicao(platBounds.left-jogBounds.width , jogBounds.top);
+
+		else //jogador a direita da plataforma
+			p->setPosicao(platBounds.left + platBounds.width, jogBounds.top);
+	}
+	
+	else if (std::abs(dy) > std::abs(dx) ) //colisão veio de cima ou de baixo
 	{
 		if (dy < 0) //jogador acima da plataforma
 		{
@@ -61,15 +66,14 @@ void Plataforma::obstaculizar(Jogador* p)
 			p->setPosicao(jogBounds.left, platBounds.top + platBounds.height);
 		}
 	}
-
-	else //colisão veio dos lados
+	else //jogador esta na borda da  plataforma, entao vamos considerar que ele esta colidindo de cima, e se ele estiver caindo, ele vai ficar em cima da plataforma
 	{
-		if (dx < 0) //jogador a esquerda da plataforma
-			p->setPosicao(platBounds.left-jogBounds.width , jogBounds.top);
-
-		else //jogador a direita da plataforma
-			p->setPosicao(platBounds.left + platBounds.width, jogBounds.top);
+		if (p->getVelY() > 0)
+		{
+			p->setNoChao(true);
+			p->setVelY(0.f);
+			p->setPosicao(jogBounds.left, platBounds.top - jogBounds.height);
+		}
 	}
-		
 
 }

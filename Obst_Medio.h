@@ -5,6 +5,9 @@ class Obst_Medio :
 {
 private:
     float largura;
+    float altura;
+    float tempoTroca;
+    bool espinhosAtivos;
 public:
     Obst_Medio();
     ~Obst_Medio();

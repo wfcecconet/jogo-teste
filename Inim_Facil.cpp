@@ -37,7 +37,7 @@ void Inim_Facil::mover()
 
 void Inim_Facil::danificar(Jogador* p)
 {
-	p->colidir(this);
+	p->receberDano(1);
 }
 
 void Inim_Facil::executar()

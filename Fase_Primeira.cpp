@@ -6,11 +6,18 @@ void Fase_Primeira::criarInimMedios()
 
 void Fase_Primeira::criarObstMedios()
 {
+	Obst_Medio* obs1 = new Obst_Medio();
+
+	obs1->setPosicao(320.f, 550.f);
+
+	lista_ents.incluir(obs1);
+	GC.incluirObstaculo(obs1);
 }
 
 void Fase_Primeira::criarObstaculo()
 {
 	criarPlataformas();
+	//criarObstMedios();
 }
 
 void Fase_Primeira::criarInimigos()
@@ -62,9 +69,9 @@ void Fase_Primeira::criarChao()
 
 Fase_Primeira::Fase_Primeira() : Fase(), maxInimMedios(7)
 {
+	criarChao();
 	criarInimigos();
 	criarObstaculo();
-	criarChao();
 }
 
 Fase_Primeira::~Fase_Primeira()

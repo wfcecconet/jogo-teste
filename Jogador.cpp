@@ -1,16 +1,11 @@
 #include "Jogador.h"
 #include "Inimigo.h"
 
-void Jogador::colidir(Inimigo* pIn)
-{
-	num_vidas--;
-}
-
 Jogador::Jogador()
 {
     pontos = 0;
-
-    num_vidas = 5;
+    invulnerabilidade = 0.f;
+    num_vidas = 10;
     velY = 0.f;
 
     body.setSize(sf::Vector2f(25.f, 40.f));
@@ -21,6 +16,20 @@ Jogador::Jogador()
 
 Jogador::~Jogador()
 {
+}
+
+void Jogador::colidir(Inimigo* pIn)
+{
+	pIn->danificar(this);
+}
+
+void Jogador::receberDano(int dano)
+{
+    if (invulnerabilidade <= 0.f)
+    {
+        num_vidas -= dano;
+        invulnerabilidade = 1.f;
+    }
 }
 
 void Jogador::mover()
@@ -47,6 +56,22 @@ void Jogador::mover()
 
 void Jogador::executar()
 {
+    if (invulnerabilidade > 0.f) //tempo da invunerabilidade diminuindo
+    {
+		if (static_cast<int>(invulnerabilidade * 10) % 2 == 0) //piscar o jogador durante a invulnerabilidade
+			body.setFillColor(sf::Color::Red);
+		else
+			body.setFillColor(sf::Color::Blue);
+        invulnerabilidade -= deltaT;
+    }    
+    else
+        body.setFillColor(sf::Color::Blue);
+     
+    if (num_vidas <= 0)
+    {
+        body.setPosition(-100.f, 670.f);
+    }
+
     velY += gravidade * deltaT; //calculando a gravidade
 
     body.move(0.f, velY * deltaT);
