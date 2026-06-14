@@ -87,3 +87,8 @@ void Obst_Medio::obstaculizar(Jogador* p)
 	if (espinhosAtivos)
 		p->receberDano(1);
 }
+
+void Obst_Medio::flip()
+{
+	body.setSize(sf::Vector2f(altura, largura));
+}

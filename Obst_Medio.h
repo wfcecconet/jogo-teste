@@ -14,5 +14,6 @@ public:
     void executar();
     void salvar();
 	void obstaculizar(Jogador* p);
+    void flip();
 };
 

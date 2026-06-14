@@ -56,6 +56,7 @@ void Jogador::mover()
 
 void Jogador::executar()
 {
+	printf("%f,%f\n", body.getPosition().x, body.getPosition().y);
     if (invulnerabilidade > 0.f) //tempo da invunerabilidade diminuindo
     {
 		if (static_cast<int>(invulnerabilidade * 10) % 2 == 0) //piscar o jogador durante a invulnerabilidade

@@ -12,19 +12,154 @@ void Fase_Primeira::criarObstMedios()
 	srand(time(0));
 	int numObst = (rand() % 3) + 3;
 
-	Obst_Medio* obs1 = new Obst_Medio();
+	if (numObst == 3)
+	{
+		Obst_Medio* obs1 = new Obst_Medio();
 
-	obs1->setPosicao(720.f, 500.f);
+		obs1->setPosicao(880.f, 440.f);
 
-	lista_ents.incluir(obs1);
-	GC.incluirObstaculo(obs1);
+		lista_ents.incluir(obs1);
+		GC.incluirObstaculo(obs1);
 
-	Obst_Medio* obs2 = new Obst_Medio();
+		Obst_Medio* obs2 = new Obst_Medio();
 
-	obs2->setPosicao(780.f, 370.f);
+		obs2->setPosicao(720.f, 390.f);
 
-	lista_ents.incluir(obs2);
-	GC.incluirObstaculo(obs2);
+		lista_ents.incluir(obs2);
+		GC.incluirObstaculo(obs2);
+
+		Obst_Medio* obs3 = new Obst_Medio();
+
+		obs3->setPosicao(820.f, 320.f);
+
+		lista_ents.incluir(obs3);
+		GC.incluirObstaculo(obs3);
+	}
+
+	if (numObst == 4)
+	{
+		Obst_Medio* obs1 = new Obst_Medio();
+
+		obs1->setPosicao(880.f, 440.f);
+
+		lista_ents.incluir(obs1);
+		GC.incluirObstaculo(obs1);
+
+		Obst_Medio* obs2 = new Obst_Medio();
+
+		obs2->setPosicao(720.f, 390.f);
+
+		lista_ents.incluir(obs2);
+		GC.incluirObstaculo(obs2);
+
+		Obst_Medio* obs3 = new Obst_Medio();
+
+		obs3->setPosicao(820.f, 320.f);
+
+		lista_ents.incluir(obs3);
+		GC.incluirObstaculo(obs3);
+
+		Obst_Medio* obs4 = new Obst_Medio();
+		obs4->flip();
+
+		obs4->setPosicao(570.f, 590.f);
+
+		lista_ents.incluir(obs4);
+		GC.incluirObstaculo(obs4);
+	}
+
+	if (numObst == 5)
+	{
+		Obst_Medio* obs1 = new Obst_Medio();
+
+		obs1->setPosicao(880.f, 440.f);
+
+		lista_ents.incluir(obs1);
+		GC.incluirObstaculo(obs1);
+
+		Obst_Medio* obs2 = new Obst_Medio();
+
+		obs2->setPosicao(720.f, 390.f);
+
+		lista_ents.incluir(obs2);
+		GC.incluirObstaculo(obs2);
+
+		Obst_Medio* obs3 = new Obst_Medio();
+
+		obs3->setPosicao(820.f, 320.f);
+
+		lista_ents.incluir(obs3);
+		GC.incluirObstaculo(obs3);
+
+		Obst_Medio* obs4 = new Obst_Medio();
+		obs4->flip();
+
+		obs4->setPosicao(570.f, 590.f);
+
+		lista_ents.incluir(obs4);
+		GC.incluirObstaculo(obs4);
+
+		Obst_Medio* obs5 = new Obst_Medio();
+		obs5->flip();
+
+		obs5->setPosicao(1090.f, 420.f);
+
+		lista_ents.incluir(obs5);
+		GC.incluirObstaculo(obs5);
+	}
+
+	if (numObst == 6)
+	{
+		Obst_Medio* obs1 = new Obst_Medio();
+
+		obs1->setPosicao(880.f, 440.f);
+
+		lista_ents.incluir(obs1);
+		GC.incluirObstaculo(obs1);
+
+		Obst_Medio* obs2 = new Obst_Medio();
+
+		obs2->setPosicao(720.f, 390.f);
+
+		lista_ents.incluir(obs2);
+		GC.incluirObstaculo(obs2);
+
+		Obst_Medio* obs3 = new Obst_Medio();
+
+		obs3->setPosicao(820.f, 320.f);
+
+		lista_ents.incluir(obs3);
+		GC.incluirObstaculo(obs3);
+
+		Obst_Medio* obs4 = new Obst_Medio();
+		obs4->flip();
+
+		obs4->setPosicao(570.f, 590.f);
+
+		lista_ents.incluir(obs4);
+		GC.incluirObstaculo(obs4);
+
+		Obst_Medio* obs5 = new Obst_Medio();
+		obs5->flip();
+
+		obs5->setPosicao(1090.f, 420.f);
+
+		lista_ents.incluir(obs5);
+		GC.incluirObstaculo(obs5);
+
+		Obst_Medio* obs6 = new Obst_Medio();
+		obs6->flip();
+
+		obs6->setPosicao(980.f, 100.f);
+
+		lista_ents.incluir(obs6);
+		GC.incluirObstaculo(obs6);
+
+
+	}
+	
+
+
 }
 
 void Fase_Primeira::criarObstaculo()
@@ -56,7 +191,7 @@ void Fase_Primeira::criarChao()
 
 	chao2->setCor(sf::Color::Green);
 	chao2->setTamanho(320.f, altura);
-	chao2->setPosicao(960.f, 670.f);
+	chao2->setPosicao(1060.f, 500.f);
 
 	lista_ents.incluir(chao2);
 	GC.incluirChao(chao2);
@@ -65,7 +200,7 @@ void Fase_Primeira::criarChao()
 
 	chao3->setCor(sf::Color::Green);
 	chao3->setTamanho(320.f, altura);
-	chao3->setPosicao(960.f, 430.f);
+	chao3->setPosicao(960.f, 180.f);
 
 	lista_ents.incluir(chao3);
 	GC.incluirChao(chao3);
@@ -73,8 +208,8 @@ void Fase_Primeira::criarChao()
 	Chao* chao4 = new Chao();
 
 	chao4->setCor(sf::Color::Green);
-	chao4->setTamanho(640.f, altura);
-	chao4->setPosicao(0.f, 310.f);
+	chao4->setTamanho(440.f, altura);
+	chao4->setPosicao(200.f, 310.f);
 
 	lista_ents.incluir(chao4);
 	GC.incluirChao(chao4);
@@ -83,7 +218,7 @@ void Fase_Primeira::criarChao()
 Fase_Primeira::Fase_Primeira() : Fase(), maxInimMedios(7)
 {
 	criarChao();
-	//criarInimigos();
+	criarInimigos();
 	criarObstaculo();
 }
 
