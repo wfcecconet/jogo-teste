@@ -15,6 +15,7 @@ protected:
 public:
     Inimigo();
     ~Inimigo();
+    void morrer();
     void salvarDataBuffer();
     virtual void executar() = 0;
     virtual void danificar(Jogador* p) = 0;

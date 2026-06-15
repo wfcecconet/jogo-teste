@@ -16,19 +16,136 @@ void Fase::criarInimFaceis()
 {
 
     srand(time(0));
-    int numEnem = (rand() % 3) + 3;
+    int numEnem = (rand() % 4) + 3;
 
-    Inim_Facil* inim1 = new Inim_Facil();
+    if (numEnem == 3)
+    {
+        Inim_Facil* inim1 = new Inim_Facil();
 
-    inim1->setPosicao(500.f, 630.);
-    lista_ents.incluir(inim1);
-    GC.incluirInimigo(inim1);
+        inim1->setPosicao(245.f, 630.);
+        lista_ents.incluir(inim1);
+        GC.incluirInimigo(inim1);
+
+        Inim_Facil* inim2 = new Inim_Facil();
+
+        inim2->setPosicao(1200, 460.);
+        lista_ents.incluir(inim2);
+        GC.incluirInimigo(inim2);
+
+        Inim_Facil* inim3 = new Inim_Facil();
+
+        inim3->setPosicao(480, 270.);
+        lista_ents.incluir(inim3);
+        GC.incluirInimigo(inim3);
+    }
+
+    if (numEnem == 4)
+    {
+        Inim_Facil* inim1 = new Inim_Facil();
+
+        inim1->setPosicao(245.f, 630.);
+        lista_ents.incluir(inim1);
+        GC.incluirInimigo(inim1);
+
+        Inim_Facil* inim2 = new Inim_Facil();
+
+        inim2->setPosicao(1200, 460.);
+        lista_ents.incluir(inim2);
+        GC.incluirInimigo(inim2);
+
+        Inim_Facil* inim3 = new Inim_Facil();
+
+        inim3->setPosicao(480, 270.);
+        lista_ents.incluir(inim3);
+        GC.incluirInimigo(inim3);
+
+        Inim_Facil* inim4 = new Inim_Facil();
+
+        inim4->setPosicao(1000, 140.);
+        lista_ents.incluir(inim4);
+        GC.incluirInimigo(inim4);
+    }
+
+    if (numEnem == 5)
+    {
+        Inim_Facil* inim1 = new Inim_Facil();
+
+        inim1->setPosicao(245.f, 630.f);
+        lista_ents.incluir(inim1);
+        GC.incluirInimigo(inim1);
+
+        Inim_Facil* inim2 = new Inim_Facil();
+
+        inim2->setPosicao(1200.f, 460.f);
+        lista_ents.incluir(inim2);
+        GC.incluirInimigo(inim2);
+
+        Inim_Facil* inim3 = new Inim_Facil();
+
+        inim3->setPosicao(480.f , 270.f);
+        lista_ents.incluir(inim3);
+        GC.incluirInimigo(inim3);
+
+        Inim_Facil* inim4 = new Inim_Facil();
+
+        inim4->setPosicao(1000.f, 140.f);
+        lista_ents.incluir(inim4);
+        GC.incluirInimigo(inim4);
+
+        Inim_Facil* inim5 = new Inim_Facil();
+
+        inim5->setPosicao(360.f, 630.f);
+        lista_ents.incluir(inim5);
+        GC.incluirInimigo(inim5);
+    }
+
+    if (numEnem == 6)
+    {
+        Inim_Facil* inim1 = new Inim_Facil();
+
+        inim1->setPosicao(245.f, 630.f);
+        lista_ents.incluir(inim1);
+        GC.incluirInimigo(inim1);
+
+        Inim_Facil* inim2 = new Inim_Facil();
+
+        inim2->setPosicao(1200.f, 460.f);
+        lista_ents.incluir(inim2);
+        GC.incluirInimigo(inim2);
+
+        Inim_Facil* inim3 = new Inim_Facil();
+
+        inim3->setPosicao(480.f, 270.f);
+        lista_ents.incluir(inim3);
+        GC.incluirInimigo(inim3);
+
+        Inim_Facil* inim4 = new Inim_Facil();
+
+        inim4->setPosicao(1000.f, 140.f);
+        lista_ents.incluir(inim4);
+        GC.incluirInimigo(inim4);
+
+        Inim_Facil* inim5 = new Inim_Facil();
+
+        inim5->setPosicao(360.f, 630.f);
+        lista_ents.incluir(inim5);
+        GC.incluirInimigo(inim5);
+
+        Inim_Facil* inim6 = new Inim_Facil();
+
+        inim6->setPosicao(1115.f, 460.f);
+        lista_ents.incluir(inim6);
+        GC.incluirInimigo(inim6);
+    }
+
+
 
 }
 void Fase::criarPlataformas()
 {
     srand(time(0));
-	int numPlat=(rand() % 3) + 3;
+	int numPlat=(rand() % 4) + 3;
+    numPlat = 6;
 
     if (numPlat == 3)
     {

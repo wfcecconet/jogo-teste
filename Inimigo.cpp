@@ -17,3 +17,13 @@ Inimigo::~Inimigo()
 void Inimigo::salvarDataBuffer()
 {
 }
+
+
+void Inimigo::morrer()
+{
+	body.setPosition(-100, 0);
+}
+
+void Inimigo::executar()
+{
+}
