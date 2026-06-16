@@ -44,3 +44,11 @@ void Gerenciador_Grafico::fechar()
 	window.close();
 }
 
+void Gerenciador_Grafico::desenharFundo(Sprite* tt)
+{
+	if (tt) {
+		window.draw(*tt);
+	}
+		
+}
+

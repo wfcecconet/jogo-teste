@@ -1,9 +1,15 @@
 #pragma once
+#include <cmath>
 #include "Inimigo.h"
+
+class Jogador;
+
 
 class Inim_Medio : public Inimigo
 {
 private:
+	float raio;
+	float veloc;
 	int tamanho;
 
 public:

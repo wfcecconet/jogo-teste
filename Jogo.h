@@ -5,19 +5,24 @@
 #include "ListaEntidades.h"
 #include "Fase_Primeira.h"
 
+using namespace sf;
+
 class Jogo{
 private:
 	
-	sf::Clock clock;
+	Clock clock;
 	Jogador* jogador1;
 	//Jogador* jogador2;
 	ListaEntidades* LEs;
 	Fase* fase1;
 	Gerenciador_Grafico* GG;
+	Sprite* pSprite;
+	Texture* pTextura;
 public:
 	Jogo();
 	~Jogo();
 	void Executar();
+	void carregarFundo();
 
 };
 

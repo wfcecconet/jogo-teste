@@ -9,12 +9,17 @@ private:
 	float raio;
 	float veloc;
 	float tempAtaque;
+	float limiteEsq;
+	float limiteDir;
+	bool movendoDireita;
+
 public:
 	Inim_Facil();
 	~Inim_Facil();
 
 	float getTempAtaque() { return tempAtaque; }
 	void setTempAtaque(float t) { tempAtaque = t; }
+	void setLimites(float esq, float dir);
 
 	void mover();
 	void danificar(Jogador* p);

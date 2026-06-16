@@ -8,6 +8,7 @@ Jogo::Jogo()
     fase1 = new Fase_Primeira();
 	fase1->incluirJogador(jogador1);
     LEs = fase1->getListaEntidades();
+    carregarFundo();
 
     
     Executar();
@@ -43,6 +44,9 @@ void Jogo::Executar()
         fase1->executar();
 
         GG->limpar();
+
+        GG->desenharFundo(pSprite);
+
         for (int i = 0; i < LEs->getLen(); i++) {
             Entidade* temp = LEs->getItem(i);
             temp->desenhar();
@@ -52,5 +56,22 @@ void Jogo::Executar()
         GG->mostrar();
     }
 
+}
+
+void Jogo::carregarFundo()
+{
+    pTextura = new Texture();
+
+    if (!pTextura->loadFromFile("por_do_sol.png")) {
+        throw "Textura nao carregada";
+    }
+    pSprite = new Sprite(*pTextura);
+
+    Vector2u tamanho = pTextura->getSize();
+
+    float x = 1280.f / tamanho.x;
+    float y = 720.f / tamanho.y;
+
+    pSprite->setScale(x, y);
 }
 

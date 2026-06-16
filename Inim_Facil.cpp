@@ -2,9 +2,11 @@
 #include "Inim_Facil.h"
 #include "Jogador.h"
 
-Inim_Facil::Inim_Facil() : raio(300.f), veloc(100.f)
+Inim_Facil::Inim_Facil() : raio(300.f), veloc(50.f), tempAtaque(0.f)
 {
-	tempAtaque = 0.f;
+	limiteEsq = 200.f;
+	limiteDir = 400.f;
+	movendoDireita = true;
 	body.setSize(sf::Vector2f(25.f, 25.f));
 	body.setFillColor(sf::Color::Red);
 
@@ -15,22 +17,26 @@ Inim_Facil::~Inim_Facil()
 	
 }
 
+void Inim_Facil::setLimites(float esq, float dir)
+{
+	limiteEsq = esq;
+	limiteDir = dir;
+}
+
 void Inim_Facil::mover()
 {
-	if (pJog == nullptr) return;
 
-	sf::Vector2f posJog = pJog->getPosicao();
-	sf::Vector2f posInim = getPosicao();
+	sf::Vector2f pos = getPosicao();
 
-	float dist_x = posJog.x - posInim.x;
-	float dist_y = posJog.y - posInim.y;
-	float distancia = sqrt(dist_x * dist_x + dist_y * dist_y);
-
-	if(distancia < raio){
-		if (dist_x > 0)
-			body.move(veloc * deltaT, 0.f);
-		else
-			body.move(-veloc * deltaT, 0.f);
+	if (movendoDireita) {
+		body.move(veloc * deltaT, 0.f);
+		if (pos.x >= limiteDir)
+			movendoDireita = false;
+	}
+	else {
+		body.move(-veloc * deltaT, 0.f);
+		if (pos.x <= limiteEsq)
+			movendoDireita = true;
 	}
 
 }

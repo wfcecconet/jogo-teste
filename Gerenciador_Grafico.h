@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+using namespace sf;
 
 class Ente;//forward declaration para evitar dependência circular, pois Ente tem um ponteiro para Gerenciador_Grafico e vice-versa
 
@@ -19,6 +20,7 @@ public:
 	void mostrar();
 	const bool estaAberto() const;
 	void fechar();
+	void desenharFundo(Sprite* tt);
 	sf::RenderWindow* getWindow()
 	{
 		return &window;

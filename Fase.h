@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 #include "Ente.h"
 #include "Jogador.h"
 #include "Plataforma.h"
@@ -10,12 +11,14 @@
 #include "SFML/Graphics.hpp"
 
 
+
 class Fase : public Ente
 {
 protected:
 	Jogador* pJog;
 	ListaEntidades lista_ents;
 	Gerenciador_Colisoes GC;
+	std::vector<sf::FloatRect> posDisponiveis;
 
 	void criarInimFaceis();
 	void criarPlataformas();

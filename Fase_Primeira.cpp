@@ -1,10 +1,30 @@
 #include "Fase_Primeira.h"
+#include "Inim_Medio.h"
 
 #include<cstdlib>
 #include <ctime>
 
 void Fase_Primeira::criarInimMedios()
 {
+	srand(static_cast<unsigned int>(time(0)));
+	int numEnem = (rand() % 2) + 2;
+
+	for (int i = 0; i < numEnem; i++) {
+		if (posDisponiveis.empty()) break;
+
+		int idx = rand() % posDisponiveis.size();
+		sf::FloatRect area = posDisponiveis[idx];
+
+		if (area.width > 50.f){
+			Inim_Medio* inim = new Inim_Medio();
+			float posX = area.left + (rand() % (int)area.width);
+			float posY = area.top - 35.f;
+
+			inim->setPosicao(posX, posY);
+			lista_ents.incluir(inim);
+			GC.incluirInimigo(inim);
+		}
+	}
 }
 
 void Fase_Primeira::criarObstMedios()
@@ -171,7 +191,7 @@ void Fase_Primeira::criarObstaculo()
 void Fase_Primeira::criarInimigos()
 {
 	criarInimFaceis();
-	//criarInimMedios();
+	criarInimMedios();
 }
 
 void Fase_Primeira::criarChao()
@@ -183,43 +203,47 @@ void Fase_Primeira::criarChao()
 	chao1->setCor(sf::Color::Green);
 	chao1->setTamanho(640.f, altura);
 	chao1->setPosicao(0.f, 670.f);
-
+	posDisponiveis.push_back(chao1->getBounds());
 	lista_ents.incluir(chao1);
 	GC.incluirChao(chao1);
+	
 
 	Chao* chao2 = new Chao();
 
 	chao2->setCor(sf::Color::Green);
 	chao2->setTamanho(320.f, altura);
 	chao2->setPosicao(1060.f, 500.f);
-
+	posDisponiveis.push_back(chao2->getBounds());
 	lista_ents.incluir(chao2);
 	GC.incluirChao(chao2);
+	
 
 	Chao* chao3 = new Chao();
 
 	chao3->setCor(sf::Color::Green);
 	chao3->setTamanho(320.f, altura);
 	chao3->setPosicao(960.f, 180.f);
-
+	posDisponiveis.push_back(chao3->getBounds());
 	lista_ents.incluir(chao3);
 	GC.incluirChao(chao3);
+	
 
 	Chao* chao4 = new Chao();
 
 	chao4->setCor(sf::Color::Green);
 	chao4->setTamanho(440.f, altura);
 	chao4->setPosicao(200.f, 310.f);
-
+	posDisponiveis.push_back(chao4->getBounds());
 	lista_ents.incluir(chao4);
 	GC.incluirChao(chao4);
+	
 }
 
 Fase_Primeira::Fase_Primeira() : Fase(), maxInimMedios(7)
 {
 	criarChao();
-	criarInimigos();
 	criarObstaculo();
+	criarInimigos();
 }
 
 Fase_Primeira::~Fase_Primeira()
