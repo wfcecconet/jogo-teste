@@ -88,7 +88,7 @@ void Gerenciador_Colisoes::tratarColisoesJogsInimgs()
     {
         if (verificarColisao(pJog1, LIs[i]))
         {
-			pJog1->colidir(LIs[i]); //ai na funcao colidir do jogador tem que chamar a funcao danificar do inimigo, e na funcao danificar do inimigo tem que chamar a funcao receberDano do jogador, e na funcao receberDano do jogador tem que diminuir o numero de vidas do jogador
+            pJog1->colidir(LIs[i]); //ai na funcao colidir do jogador tem que chamar a funcao danificar do inimigo, e na funcao danificar do inimigo tem que chamar a funcao receberDano do jogador, e na funcao receberDano do jogador tem que diminuir o numero de vidas do jogador
         }
     }
 }

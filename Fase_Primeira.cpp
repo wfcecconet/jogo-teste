@@ -30,7 +30,7 @@ void Fase_Primeira::criarInimMedios()
 void Fase_Primeira::criarObstMedios()
 {
 	srand(time(0));
-	int numObst = (rand() % 3) + 3;
+	int numObst = (rand() % 4) + 3;
 
 	if (numObst == 3)
 	{

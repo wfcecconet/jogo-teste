@@ -14,7 +14,6 @@ void Fase::incluirJogador(Jogador* j)
 
 void Fase::criarInimFaceis()
 {
-
     srand(static_cast<unsigned int>(time(0)));
     int numEnem = (rand() % 3) + 3;
 
@@ -39,7 +38,8 @@ void Fase::criarInimFaceis()
 void Fase::criarPlataformas()
 {
     srand(time(0));
-	int numPlat=(rand() % 3) + 3;
+	int numPlat=(rand() % 4) + 3;
+    numPlat = 6;
 
     if (numPlat == 3)
     {

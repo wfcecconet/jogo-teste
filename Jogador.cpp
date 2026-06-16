@@ -20,7 +20,18 @@ Jogador::~Jogador()
 
 void Jogador::colidir(Inimigo* pIn)
 {
-	pIn->danificar(this);
+    float baseJogador =getBounds().top + getBounds().height;
+    float topoInimigo = pIn->getBounds().top;
+
+    if (velY > 0.f && baseJogador - topoInimigo < 15.f)
+    {
+          pIn->morrer();
+
+		  velY = -200.f; // jogador sobe no ar após matar o inimigo
+           return;
+    }
+    else
+	    pIn->danificar(this);
 }
 
 void Jogador::receberDano(int dano)
@@ -50,13 +61,11 @@ void Jogador::mover()
         velY = -450.f;
         noChao = false;
     }
-
-
 }
 
 void Jogador::executar()
 {
-	printf("%f,%f\n", body.getPosition().x, body.getPosition().y);
+	//printf("%f,%f\n", body.getPosition().x, body.getPosition().y);
     if (invulnerabilidade > 0.f) //tempo da invunerabilidade diminuindo
     {
 		if (static_cast<int>(invulnerabilidade * 10) % 2 == 0) //piscar o jogador durante a invulnerabilidade
