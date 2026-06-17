@@ -8,9 +8,12 @@ class Jogador;
 class Inim_Medio : public Inimigo
 {
 private:
+	sf::Texture textura;
+	sf::Sprite sprite;
 	float raio;
 	float veloc;
 	int tamanho;
+	
 
 public:
 

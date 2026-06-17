@@ -62,7 +62,7 @@ void Jogo::carregarFundo()
 {
     pTextura = new Texture();
 
-    if (!pTextura->loadFromFile("por_do_sol.png")) {
+    if (!pTextura->loadFromFile("Imagens/bg/lusco_fusco.png")) {
         throw "Textura nao carregada";
     }
     pSprite = new Sprite(*pTextura);

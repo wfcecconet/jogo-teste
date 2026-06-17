@@ -6,6 +6,8 @@ class Jogador;
 class Inim_Facil : public Inimigo
 {
 private:
+	sf::Texture textura;
+	sf::Sprite sprite;
 	float raio;
 	float veloc;
 	float tempAtaque;

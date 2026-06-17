@@ -49,10 +49,6 @@ void Jogador::mover()
         body.move(sf::Vector2(-0.2f, 0.f));
     }
 
-    /*if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-        body.move(sf::Vector2(0.f, 0.4f));
-    }*/
-
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
         body.move(sf::Vector2(0.2f, 0.f));
     }

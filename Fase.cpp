@@ -28,7 +28,7 @@ void Fase::criarInimFaceis()
             float posY = area.top - 25.f;
 
             inim->setPosicao(posX, posY);
-            inim->setLimites(area.left + 12.f, area.left + area.width - 12.f);
+            inim->setLimites(area.left, area.left + area.width - 38);
             lista_ents.incluir(inim);
             GC.incluirInimigo(inim);
         }
