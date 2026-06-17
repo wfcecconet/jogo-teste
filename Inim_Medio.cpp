@@ -3,6 +3,7 @@
 
 Inim_Medio::Inim_Medio() : raio(200.f), veloc(30.f)
 {
+	nivel_maldade = 2;
 	tamanho = 35;
 	body.setSize(sf::Vector2f(25.f, 44.f));
 	body.setFillColor(sf::Color::Magenta);
@@ -61,5 +62,5 @@ void Inim_Medio::mover()
 
 void Inim_Medio::danificar(Jogador* p)
 {
-	p->receberDano(2);
+	p->receberDano(nivel_maldade);
 }

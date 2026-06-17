@@ -4,6 +4,7 @@
 
 Inim_Facil::Inim_Facil() : raio(300.f), veloc(50.f), tempAtaque(0.f)
 {
+	nivel_maldade = 1;
 	if (textura.loadFromFile("Imagens/Sprites/aranha_sprite.png")){
 		sprite.setTexture(textura);
 		pFig = &sprite;
@@ -56,7 +57,7 @@ void Inim_Facil::mover()
 
 void Inim_Facil::danificar(Jogador* p)
 {
-	p->receberDano(1);
+	p->receberDano(nivel_maldade);
 }
 
 void Inim_Facil::executar()

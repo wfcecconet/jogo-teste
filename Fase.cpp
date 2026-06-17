@@ -39,7 +39,6 @@ void Fase::criarPlataformas()
 {
     srand(time(0));
 	int numPlat=(rand() % 4) + 3;
-    numPlat = 6;
 
     if (numPlat == 3)
     {

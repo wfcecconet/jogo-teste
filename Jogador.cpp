@@ -46,11 +46,11 @@ void Jogador::receberDano(int dano)
 void Jogador::mover()
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-        body.move(sf::Vector2(-0.2f, 0.f));
+        body.move(sf::Vector2(-0.6f, 0.f));
     }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-        body.move(sf::Vector2(0.2f, 0.f));
+        body.move(sf::Vector2(0.6f, 0.f));
     }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && noChao) {
